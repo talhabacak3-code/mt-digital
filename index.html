@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MT Digital — Markanızı Dijitalde Büyütelim | Afyonkarahisar Dijital Pazarlama Ajansı</title>
+  <meta name="description" content="MT Digital — Afyonkarahisar merkezli dijital pazarlama ajansı. Web tasarım, sosyal medya yönetimi, Google & Meta reklamları, Trendyol & Hepsiburada danışmanlığı ve web site kurulum. Ücretsiz ilk görüşme için hemen ulaşın." />
+  <meta name="keywords" content="dijital pazarlama, web tasarım, sosyal medya yönetimi, Trendyol danışmanlık, Hepsiburada danışmanlık, Afyonkarahisar reklam ajansı, Google Ads, Meta Ads" />
+  <meta name="theme-color" content="#1b63e3" />
+
+  <!-- Sosyal paylaşım (Open Graph) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="MT Digital — Markanızı Dijitalde Büyütelim" />
+  <meta property="og:description" content="Afyonkarahisar merkezli dijital pazarlama ajansı. Web tasarım, sosyal medya, reklam yönetimi ve pazaryeri danışmanlığı." />
+  <meta property="og:locale" content="tr_TR" />
+
+  <!-- Favicon (SVG) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b63e3'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='28' font-weight='bold' fill='white' text-anchor='middle'%3EMT%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header class="header" id="header">
+    <div class="container nav">
+      <a href="#hero" class="logo" aria-label="MT Digital ana sayfa">
+        <span class="logo-mark">MT</span>
+        <span class="logo-text">Digital</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#hizmetler">Hizmetler</a>
+        <a href="#surec">Süreç</a>
+        <a href="#neden-biz">Neden Biz</a>
+        <a href="#paketler">Paketler</a>
+        <a href="#sss">S.S.S.</a>
+        <a href="#iletisim">İletişim</a>
+        <a href="https://wa.me/905536769156?text=Merhaba,%20bilgi%20almak%20istiyorum" class="btn btn-primary nav-cta" target="_blank" rel="noopener">İletişime Geç</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Menüyü aç/kapat" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO (Afyon manzaralı sinematik giriş) ===== -->
+  <section class="hero" id="hero">
+    <!-- Afyonkarahisar değerleri — slayt gösterimi (Ken Burns efekti) -->
+    <!-- TODO: Dilerseniz bu görsellerin yerine kendi tanıtım videonuzu (<video>) koyabilirsiniz -->
+    <div class="hero-slideshow" aria-hidden="true">
+      <div class="hero-slide" style="background-image:url('assets/img/afyon-kale.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('assets/img/afyon-kale-panorama.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('assets/img/afyon-kocatepe.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('assets/img/afyon-ulucami-yeni.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('assets/img/afyon-anit.jpg')"></div>
+    </div>
+
+    <!-- GERÇEK VIDEO: assets/video/afyon.mp4 dosyasını koyduğunuzda otomatik oynar (voldi gibi). -->
+    <!-- Dosya yoksa üstteki Afyon slayt gösterisi gösterilir. -->
+    <video id="heroVideo" class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <span class="eyebrow eyebrow-light">📍 Afyonkarahisar'ın Dijital Pazarlama Ajansı</span>
+        <h1>Markanızı <span class="accent">Dijitalde</span> Büyütelim</h1>
+        <p class="hero-sub">
+          Web tasarım, sosyal medya, dijital pazarlama, Trendyol &amp; Hepsiburada
+          danışmanlığı ve web site kurulum hizmetleriyle işinizi bir adım öne taşıyoruz.
+        </p>
+        <div class="hero-actions">
+          <a href="https://wa.me/905536769156?text=Merhaba,%20bilgi%20almak%20istiyorum" class="btn btn-primary" target="_blank" rel="noopener">
+            <svg class="ico" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.82 9.82 0 0 0 1.51 5.26l-.999 3.648 3.978-1.297zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            WhatsApp'tan Yaz
+          </a>
+          <a href="#hizmetler" class="btn btn-ghost">Hizmetleri Gör</a>
+        </div>
+      </div>
+
+      <div class="hero-highlights">
+        <div class="hl-card">
+          <span class="hl-ico" aria-hidden="true">🚀</span>
+          <div>
+            <h3>Doğru Strateji</h3>
+            <p>Hedefe ulaşan planlama</p>
+          </div>
+        </div>
+        <div class="hl-card">
+          <span class="hl-ico" aria-hidden="true">💡</span>
+          <div>
+            <h3>Yaratıcı Tasarım</h3>
+            <p>Dikkat çeken görsellik</p>
+          </div>
+        </div>
+        <div class="hl-card">
+          <span class="hl-ico" aria-hidden="true">📈</span>
+          <div>
+            <h3>Ölçülebilir Sonuçlar</h3>
+            <p>Raporlama &amp; analiz</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#hizmetler" class="hero-scroll" aria-label="Aşağı kaydır">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ===== PLATFORM ŞERİDİ ===== -->
+  <section class="platforms">
+    <div class="container">
+      <p class="platforms-title">Uzman olduğumuz platformlar</p>
+      <div class="platforms-row">
+        <span class="wordmark trendyol">trendyol</span>
+        <span class="wordmark hepsiburada">hepsiburada</span>
+        <img src="assets/icons/instagram.svg" alt="Instagram" />
+        <img src="assets/icons/facebook.svg" alt="Facebook" />
+        <img src="assets/icons/tiktok.svg" alt="TikTok" />
+        <img src="assets/icons/youtube.svg" alt="YouTube" />
+        <img src="assets/icons/googleads.svg" alt="Google Ads" />
+        <img src="assets/icons/meta.svg" alt="Meta" />
+        <img src="assets/icons/wordpress.svg" alt="WordPress" />
+        <img src="assets/icons/photoshop.svg" alt="Adobe Photoshop" />
+        <img src="assets/icons/illustrator.svg" alt="Adobe Illustrator" />
+        <img src="assets/icons/canva.svg" alt="Canva" />
+        <img src="assets/icons/figma.svg" alt="Figma" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TAAHHÜT BANDI ===== -->
+  <section class="stats">
+    <div class="container stats-row">
+      <div class="stat reveal">
+        <span class="stat-num">Ücretsiz</span>
+        <span class="stat-label">İlk Görüşme &amp; Keşif</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat-num">7/24</span>
+        <span class="stat-label">Kesintisiz Destek</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat-num">%100</span>
+        <span class="stat-label">Şeffaf Raporlama</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat-num">Size Özel</span>
+        <span class="stat-label">Strateji &amp; Çözüm</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HİZMETLER ===== -->
+  <section class="section" id="hizmetler">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Hizmetlerimiz</span>
+        <h2>İşinizi Büyütecek Dijital Çözümler</h2>
+        <p>Markanızı her kanalda güçlü ve görünür kılmak için uçtan uca hizmet veriyoruz.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <article class="card reveal">
+          <div class="card-logos">
+            <img src="assets/icons/photoshop.svg" alt="Adobe Photoshop" class="brand" />
+            <img src="assets/icons/illustrator.svg" alt="Adobe Illustrator" class="brand" />
+            <img src="assets/icons/canva.svg" alt="Canva" class="brand" />
+            <img src="assets/icons/figma.svg" alt="Figma" class="brand" />
+          </div>
+          <h3>Web Tasarım</h3>
+          <p>Modern, mobil uyumlu ve SEO destekli özgün tasarımlar.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-logos">
+            <img src="assets/icons/instagram.svg" alt="Instagram" class="brand" />
+            <img src="assets/icons/tiktok.svg" alt="TikTok" class="brand" />
+            <img src="assets/icons/facebook.svg" alt="Facebook" class="brand" />
+            <img src="assets/icons/youtube.svg" alt="YouTube" class="brand" />
+          </div>
+          <h3>Sosyal Medya Danışmanlığı</h3>
+          <p>İçerik planlama, paylaşım yönetimi, etkileşim ve büyüme.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-logos">
+            <img src="assets/icons/googleads.svg" alt="Google Ads" class="brand" />
+            <img src="assets/icons/meta.svg" alt="Meta" class="brand" />
+          </div>
+          <h3>Dijital Marketing</h3>
+          <p>Google Ads, Meta Ads ve performans reklamları yönetimi.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-logos">
+            <span class="wordmark trendyol">trendyol</span>
+          </div>
+          <h3>Trendyol Danışmanlığı</h3>
+          <p>Mağaza yönetimi, ürün optimizasyonu, reklam ve satış artışı.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-logos">
+            <span class="wordmark hepsiburada">hepsiburada</span>
+          </div>
+          <h3>Hepsiburada Danışmanlığı</h3>
+          <p>Mağaza açılışı, içerik &amp; SEO ve performans yönetimi.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-logos">
+            <img src="assets/icons/wordpress.svg" alt="WordPress" class="brand" />
+            <img src="assets/icons/cpanel.svg" alt="cPanel" class="brand" />
+            <img src="assets/icons/cloudflare.svg" alt="Cloudflare" class="brand" />
+          </div>
+          <h3>Web Site Kurulum</h3>
+          <p>Domain, hosting, kurulum, güvenlik ve teknik destek.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SÜREÇ / NASIL ÇALIŞIYORUZ ===== -->
+  <section class="section section-alt" id="surec">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Çalışma Sürecimiz</span>
+        <h2>Sizi Yormadan, Adım Adım Sonuca</h2>
+        <p>Şeffaf ve net bir yol haritasıyla ilerliyoruz. Siz işinize odaklanın, dijitali biz yönetelim.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal">
+          <span class="step-num">1</span>
+          <h3>Analiz &amp; Keşif</h3>
+          <p>İşinizi, hedeflerinizi ve rakiplerinizi inceliyoruz. Ücretsiz ilk görüşmede ihtiyaçlarınızı netleştiriyoruz.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num">2</span>
+          <h3>Strateji &amp; Planlama</h3>
+          <p>Markanıza özel, bütçenize uygun bir dijital pazarlama yol haritası hazırlıyoruz.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num">3</span>
+          <h3>Uygulama</h3>
+          <p>Tasarım, içerik ve reklamları hayata geçiriyoruz. Tüm kanalları sizin adınıza profesyonelce yönetiyoruz.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num">4</span>
+          <h3>Takip &amp; Raporlama</h3>
+          <p>Sonuçları ölçüyor, düzenli raporluyor ve daha iyisi için stratejiyi sürekli optimize ediyoruz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEDEN BİZ ===== -->
+  <section class="section" id="neden-biz">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Neden Biz</span>
+        <h2>Sonuç Odaklı Çalışıyoruz</h2>
+        <p>Sadece görünürlük değil, ölçülebilir büyüme hedefliyoruz.</p>
+      </div>
+
+      <div class="grid grid-3 features">
+        <div class="feature reveal">
+          <span class="feat-ico">🎯</span>
+          <h3>Hedef Kitle Analizi</h3>
+          <p>Bütçenizi doğru kişilere harcarız. Markanıza gerçekten ilgi duyan kitleyi analiz eder, reklam bütçenizi boşa harcatmayız.</p>
+        </div>
+        <div class="feature reveal">
+          <span class="feat-ico">📊</span>
+          <h3>Marka Büyümesi</h3>
+          <p>Sadece takipçi değil, müşteri kazandırırız. Markanızı tanınır kılarak kalıcı ve sürdürülebilir bir büyüme sağlarız.</p>
+        </div>
+        <div class="feature reveal">
+          <span class="feat-ico">⚡</span>
+          <h3>Yüksek Dönüşüm</h3>
+          <p>Ziyaretçiyi alıcıya çeviririz. Tıklamayı satışa dönüştüren stratejilerle reklam harcamanızdan en yüksek getiriyi alırsınız.</p>
+        </div>
+        <div class="feature reveal">
+          <span class="feat-ico">📈</span>
+          <h3>Raporlama &amp; Analiz</h3>
+          <p>Her kuruşun nereye gittiğini görürsünüz. Şeffaf raporlarla sonuçları net rakamlarla paylaşır, tahminle değil veriyle ilerleriz.</p>
+        </div>
+        <div class="feature reveal">
+          <span class="feat-ico">🕐</span>
+          <h3>7/24 Destek</h3>
+          <p>Her zaman yanınızdayız. Sorularınıza hızlı dönüş yapar, sizi süreç boyunca asla yalnız bırakmayız.</p>
+        </div>
+        <div class="feature reveal">
+          <span class="feat-ico">✅</span>
+          <h3>Sonuç Odaklı Çalışma</h3>
+          <p>Boş vaat değil, gerçek sonuç. Hedeflerinize ulaşana kadar stratejimizi sürekli test eder ve optimize ederiz.</p>
+        </div>
+      </div>
+
+      <!-- Harekete geçirici banner -->
+      <div class="cta-banner reveal">
+        <div class="cta-text">
+          <h3>Rakipleriniz dijitalde büyürken siz geride kalmayın.</h3>
+          <p>Markanızı bir sonraki seviyeye taşıyalım. İlk görüşme ve fiyat bilgisi tamamen ücretsiz.</p>
+        </div>
+        <a href="https://wa.me/905536769156?text=Merhaba,%20markam%C4%B1%20b%C3%BCy%C3%BCtmek%20i%C3%A7in%20bilgi%20almak%20istiyorum" class="btn btn-white" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.82 9.82 0 0 0 1.51 5.26l-.999 3.648 3.978-1.297zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Hemen Ücretsiz Bilgi Al
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PAKETLER ===== -->
+  <section class="section section-alt" id="paketler">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Paketlerimiz</span>
+        <h2>Size Uygun Çözümü Seçin</h2>
+        <p>Fiyatlar işletmenizin ihtiyacına göre belirlenir. Detaylı bilgi için bizimle iletişime geçin.</p>
+      </div>
+
+      <div class="grid grid-3 packages">
+        <!-- Başlangıç -->
+        <article class="pkg reveal">
+          <div class="pkg-head">
+            <h3>Başlangıç</h3>
+            <p class="pkg-tag">Yeni başlayan markalar için</p>
+          </div>
+          <ul class="pkg-list">
+            <li>Web tasarım (tek sayfa / kurumsal)</li>
+            <li>Temel SEO ayarları</li>
+            <li>1 sosyal medya hesabı kurulumu</li>
+            <li>İçerik planı (aylık)</li>
+            <li>Aylık temel raporlama</li>
+          </ul>
+          <p class="pkg-price">Fiyat ve detay için bilgi alın</p>
+          <a href="https://wa.me/905536769156?text=Merhaba,%20Ba%C5%9Flang%C4%B1%C3%A7%20paketi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" class="btn btn-outline pkg-btn" target="_blank" rel="noopener">Bilgi Alın</a>
+        </article>
+
+        <!-- Profesyonel (popüler) -->
+        <article class="pkg pkg-featured reveal">
+          <span class="pkg-badge">En Popüler</span>
+          <div class="pkg-head">
+            <h3>Profesyonel</h3>
+            <p class="pkg-tag">Büyümek isteyen işletmeler için</p>
+          </div>
+          <ul class="pkg-list">
+            <li>Kurumsal web tasarım + kurulum</li>
+            <li>SEO &amp; içerik optimizasyonu</li>
+            <li>2–3 sosyal medya hesap yönetimi</li>
+            <li>Google &amp; Meta Ads yönetimi</li>
+            <li>Trendyol <em>veya</em> Hepsiburada danışmanlığı</li>
+            <li>Detaylı aylık raporlama &amp; analiz</li>
+          </ul>
+          <p class="pkg-price">Fiyat ve detay için bilgi alın</p>
+          <a href="https://wa.me/905536769156?text=Merhaba,%20Profesyonel%20paket%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" class="btn btn-primary pkg-btn" target="_blank" rel="noopener">Bilgi Alın</a>
+        </article>
+
+        <!-- Kurumsal -->
+        <article class="pkg reveal">
+          <div class="pkg-head">
+            <h3>Kurumsal</h3>
+            <p class="pkg-tag">Tam kapsamlı dijital yönetim</p>
+          </div>
+          <ul class="pkg-list">
+            <li>Profesyonel paketin tamamı</li>
+            <li>Trendyol <strong>ve</strong> Hepsiburada yönetimi</li>
+            <li>Tüm sosyal medya kanallarının yönetimi</li>
+            <li>Performans reklamları &amp; bütçe optimizasyonu</li>
+            <li>Öncelikli 7/24 destek</li>
+            <li>Haftalık strateji &amp; raporlama</li>
+          </ul>
+          <p class="pkg-price">Fiyat ve detay için bilgi alın</p>
+          <a href="https://wa.me/905536769156?text=Merhaba,%20Kurumsal%20paket%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" class="btn btn-outline pkg-btn" target="_blank" rel="noopener">Bilgi Alın</a>
+        </article>
+      </div>
+
+      <p class="pkg-note">* Paketler ihtiyacınıza göre özelleştirilebilir. Size özel teklif için iletişime geçin.</p>
+    </div>
+  </section>
+
+  <!-- ===== SSS ===== -->
+  <section class="section" id="sss">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Sık Sorulan Sorular</span>
+        <h2>Aklınızdaki Soruların Cevabı</h2>
+        <p>Merak ettiğiniz başka bir şey varsa WhatsApp'tan bize yazmanız yeterli.</p>
+      </div>
+
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Fiyatlar neden sitede yazmıyor?
+            <span class="faq-ico" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><p>Her işletmenin ihtiyacı farklı olduğu için tek bir sabit fiyat vermiyoruz. Size özel, bütçenizi en verimli kullanan bir teklif hazırlıyoruz. Ücretsiz görüşmede net fiyatı öğrenebilirsiniz.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Hangi şehirlere hizmet veriyorsunuz?
+            <span class="faq-ico" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><p>Merkezimiz Afyonkarahisar'da olmakla birlikte, tüm hizmetlerimizi online olarak Türkiye'nin her yerine veriyoruz. Uzaklık bir engel değil.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Sonuçları ne kadar sürede görürüm?
+            <span class="faq-ico" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><p>Reklam çalışmalarında ilk verileri birkaç gün içinde görmeye başlarsınız. Kalıcı marka büyümesi ve SEO ise ortalama 1-3 ay içinde belirgin sonuç verir. Süreç boyunca düzenli rapor paylaşırız.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Uzun süreli sözleşme zorunlu mu?
+            <span class="faq-ico" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><p>Hayır. Sizi bağlamak yerine işimizle güveninizi kazanmayı tercih ediyoruz. Çalışma koşullarını ihtiyaçlarınıza göre birlikte belirliyoruz.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Zaten bir web sitem/mağazam var, yine de yardımcı olur musunuz?
+            <span class="faq-ico" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><p>Kesinlikle. Mevcut sitenizi veya Trendyol/Hepsiburada mağazanızı inceleyip iyileştirir, satışlarınızı artıracak optimizasyonları uygularız.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== İLETİŞİM ===== -->
+  <section class="section section-alt" id="iletisim">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">İletişim</span>
+        <h2>Hemen İletişime Geçin</h2>
+        <p>Fiyat ve bilgi almak için bize ulaşın — en kısa sürede dönüş yapalım.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <a class="contact-item" href="tel:+905536769156">
+            <span class="contact-ico" aria-hidden="true">📞</span>
+            <div>
+              <strong>Telefon</strong>
+              <span>0553 676 91 56</span>
+            </div>
+          </a>
+
+          <a class="contact-item" href="https://wa.me/905536769156?text=Merhaba,%20bilgi%20almak%20istiyorum" target="_blank" rel="noopener">
+            <span class="contact-ico" aria-hidden="true">💬</span>
+            <div>
+              <strong>WhatsApp</strong>
+              <span>Tıklayın, hemen yazalım</span>
+            </div>
+          </a>
+
+          <div class="contact-item contact-static">
+            <span class="contact-ico" aria-hidden="true">📍</span>
+            <div>
+              <strong>Konum</strong>
+              <span>Afyonkarahisar / Merkez</span>
+            </div>
+          </div>
+
+          <div class="socials">
+            <!-- TODO: gerçek sosyal medya linkleriyle değiştirin -->
+            <a href="#" class="social" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.8c-3.15 0-3.5.01-4.74.07-1.14.05-1.76.24-2.17.4-.55.22-.94.47-1.35.88-.41.41-.66.8-.88 1.35-.16.41-.35 1.03-.4 2.17-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.05 1.14.24 1.76.4 2.17.22.55.47.94.88 1.35.41.41.8.66 1.35.88.41.16 1.03.35 2.17.4 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.14-.05 1.76-.24 2.17-.4.55-.22.94-.47 1.35-.88.41-.41.66-.8.88-1.35.16-.41.35-1.03.4-2.17.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.14-.24-1.76-.4-2.17a3.6 3.6 0 0 0-.88-1.35 3.6 3.6 0 0 0-1.35-.88c-.41-.16-1.03-.35-2.17-.4-1.24-.06-1.59-.07-4.74-.07zm0 3.06a5.82 5.82 0 1 1 0 11.64 5.82 5.82 0 0 1 0-11.64zm0 9.6a3.78 3.78 0 1 0 0-7.56 3.78 3.78 0 0 0 0 7.56zm7.41-9.83a1.36 1.36 0 1 1-2.72 0 1.36 1.36 0 0 1 2.72 0z"/></svg>
+            </a>
+            <!-- TODO: gerçek sosyal medya linkleriyle değiştirin -->
+            <a href="#" class="social" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="map-wrap">
+          <!-- TODO: dilerseniz gerçek Google Harita embed adresinizle değiştirin -->
+          <iframe
+            title="MT Digital konum — Afyonkarahisar Merkez"
+            src="https://www.google.com/maps?q=Afyonkarahisar+Merkez&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#hero" class="logo logo-light">
+          <span class="logo-mark">MT</span>
+          <span class="logo-text">Digital</span>
+        </a>
+        <p>Afyonkarahisar merkezli dijital pazarlama ajansı. Markanızı dijitalde büyütüyoruz.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Hızlı Linkler</h4>
+        <a href="#hizmetler">Hizmetler</a>
+        <a href="#surec">Süreç</a>
+        <a href="#paketler">Paketler</a>
+        <a href="#sss">S.S.S.</a>
+        <a href="#iletisim">İletişim</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>İletişim</h4>
+        <a href="tel:+905536769156">0553 676 91 56</a>
+        <a href="https://wa.me/905536769156" target="_blank" rel="noopener">WhatsApp</a>
+        <span>Afyonkarahisar / Merkez</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> MT Digital. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <!-- ===== YUKARI ÇIK BUTONU ===== -->
+  <button class="to-top" id="toTop" aria-label="Sayfanın başına dön">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 4l8 8-1.41 1.41L13 7.83V20h-2V7.83l-5.59 5.58L4 12z"/></svg>
+  </button>
+
+  <!-- ===== SABİT WHATSAPP BUTONU ===== -->
+  <a href="https://wa.me/905536769156?text=Merhaba,%20bilgi%20almak%20istiyorum" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp ile iletişime geçin">
+    <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path fill="currentColor" d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.82 9.82 0 0 0 1.51 5.26l-.999 3.648 3.978-1.297zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

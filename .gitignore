@@ -1,0 +1,12 @@
+# Bağımlılıklar
+node_modules/
+
+# İşletim sistemi / editör
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# Geçici dosyalar
+*.tmp
+.cache/
