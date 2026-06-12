@@ -85,25 +85,30 @@ img, svg { display: block; }
 .hero-video.active { display: block; }
 .hero-slide {
   position: absolute; inset: 0; background-size: cover; background-position: center;
-  opacity: 0; will-change: opacity, transform; animation: heroKen 36s infinite;
+  opacity: 0; will-change: opacity, transform; animation: heroKen 50s infinite;
 }
-.hero-slide:nth-child(1) { animation-delay: 0s; }
-.hero-slide:nth-child(2) { animation-delay: 6s; }
-.hero-slide:nth-child(3) { animation-delay: 12s; }
-.hero-slide:nth-child(4) { animation-delay: 18s; }
-.hero-slide:nth-child(5) { animation-delay: 24s; }
-.hero-slide:nth-child(6) { animation-delay: 30s; }
+.hero-slide:nth-child(1)  { animation-delay: 0s; }
+.hero-slide:nth-child(2)  { animation-delay: 5s; }
+.hero-slide:nth-child(3)  { animation-delay: 10s; }
+.hero-slide:nth-child(4)  { animation-delay: 15s; }
+.hero-slide:nth-child(5)  { animation-delay: 20s; }
+.hero-slide:nth-child(6)  { animation-delay: 25s; }
+.hero-slide:nth-child(7)  { animation-delay: 30s; }
+.hero-slide:nth-child(8)  { animation-delay: 35s; }
+.hero-slide:nth-child(9)  { animation-delay: 40s; }
+.hero-slide:nth-child(10) { animation-delay: 45s; }
 @keyframes heroKen {
-  0%   { opacity: 0; transform: scale(1.16); }
-  2.5% { opacity: 1; }
-  16%  { opacity: 1; }
-  20%  { opacity: 0; transform: scale(1); }
+  0%   { opacity: 0; transform: scale(1.12); }
+  1.6% { opacity: 1; }
+  9%   { opacity: 1; }
+  11%  { opacity: 0; transform: scale(1); }
   100% { opacity: 0; transform: scale(1); }
 }
+/* Yazı yok — sadece üst (navbar) ve alt (ok) için çok hafif degrade */
 .hero-overlay {
   background:
-    linear-gradient(100deg, rgba(6,14,33,.86) 0%, rgba(6,14,33,.5) 46%, rgba(6,14,33,.26) 100%),
-    linear-gradient(0deg, rgba(6,14,33,.5) 0%, rgba(6,14,33,0) 40%);
+    linear-gradient(180deg, rgba(6,14,33,.22) 0%, rgba(6,14,33,0) 14%),
+    linear-gradient(0deg, rgba(6,14,33,.32) 0%, rgba(6,14,33,0) 20%);
 }
 .hero-inner {
   position: relative; z-index: 3; display: flex; flex-direction: column; gap: 38px;
@@ -157,6 +162,17 @@ img, svg { display: block; }
   50% { opacity: 1; }
   100% { opacity: 0; transform: translateY(8px); }
 }
+
+/* ===== TANITIM (banner altı başlık + butonlar) ===== */
+.intro { background: #fff; padding: 62px 0 56px; text-align: center; }
+.intro-inner { max-width: 840px; margin: 0 auto; }
+.intro h1 {
+  font-size: clamp(30px, 4.6vw, 48px); line-height: 1.08; font-weight: 800;
+  letter-spacing: -1px; margin-top: 6px; color: var(--ink);
+}
+.intro h1 .accent { color: var(--blue); }
+.intro-sub { color: var(--gray); font-size: 17px; margin: 18px auto 28px; max-width: 660px; }
+.intro-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
 /* ===== SECTIONS ===== */
 .section { padding: 80px 0; }
@@ -419,10 +435,9 @@ a.contact-item:hover { transform: translateX(6px); border-color: var(--blue); }
 
 @media (max-width: 620px) {
   .section { padding: 56px 0; }
-  .hero { min-height: auto; }
-  .hero-inner { padding-top: 110px; padding-bottom: 64px; gap: 28px; }
-  .hero-highlights { grid-template-columns: 1fr; }
-  .hero-scroll { display: none; }
+  .hero { min-height: 60vh; }
+  .intro { padding: 44px 0 40px; }
+  .intro-actions .btn { flex: 1; }
   .grid-3 { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; gap: 28px; }
   .hero-actions .btn { flex: 1; }
