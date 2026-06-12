@@ -71,9 +71,10 @@ img, svg { display: block; }
 .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 /* ===== HERO (sinematik / Afyon manzaralı) ===== */
+/* Reklam filmi tadında 16:9 sinematik panel (1920x1080 görseller tam oturur) */
 .hero {
-  position: relative; min-height: 90vh; display: flex; align-items: center;
-  overflow: hidden; color: #fff; background: #0a1430;
+  position: relative; width: 100%; aspect-ratio: 16 / 9; max-height: 100vh;
+  overflow: hidden; background: #0a1430;
 }
 .hero-slideshow, .hero-overlay { position: absolute; inset: 0; }
 .hero-slideshow { z-index: 0; }
@@ -98,11 +99,11 @@ img, svg { display: block; }
 .hero-slide:nth-child(9)  { animation-delay: 40s; }
 .hero-slide:nth-child(10) { animation-delay: 45s; }
 @keyframes heroKen {
-  0%   { opacity: 0; transform: scale(1.12); }
-  1.6% { opacity: 1; }
+  0%   { opacity: 0; transform: scale(1.09); }
+  1.8% { opacity: 1; }
   9%   { opacity: 1; }
-  11%  { opacity: 0; transform: scale(1); }
-  100% { opacity: 0; transform: scale(1); }
+  10.8%{ opacity: 0; transform: scale(1.005); }
+  100% { opacity: 0; transform: scale(1.005); }
 }
 /* Yazı yok — sadece üst (navbar) ve alt (ok) için çok hafif degrade */
 .hero-overlay {
@@ -435,7 +436,7 @@ a.contact-item:hover { transform: translateX(6px); border-color: var(--blue); }
 
 @media (max-width: 620px) {
   .section { padding: 56px 0; }
-  .hero { min-height: 60vh; }
+  .hero { aspect-ratio: 3 / 2; }
   .intro { padding: 44px 0 40px; }
   .intro-actions .btn { flex: 1; }
   .grid-3 { grid-template-columns: 1fr; }
