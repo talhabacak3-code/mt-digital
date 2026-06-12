@@ -71,10 +71,11 @@ img, svg { display: block; }
 .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 /* ===== HERO (sinematik / Afyon manzaralı) ===== */
-/* Reklam filmi tadında 16:9 sinematik panel (1920x1080 görseller tam oturur) */
+/* Reklam filmi tadında, ORTADA kompakt 16:9 panel (sayfayı kaplamaz) */
 .hero {
-  position: relative; width: 100%; aspect-ratio: 16 / 9; max-height: 100vh;
-  overflow: hidden; background: #0a1430;
+  position: relative; width: min(960px, 92%); margin: 28px auto 4px;
+  aspect-ratio: 16 / 9; overflow: hidden; border-radius: 18px;
+  background: #0a1430; box-shadow: 0 24px 55px rgba(12, 28, 66, .22);
 }
 .hero-slideshow, .hero-overlay { position: absolute; inset: 0; }
 .hero-slideshow { z-index: 0; }

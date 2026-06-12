@@ -48,24 +48,20 @@ if ('IntersectionObserver' in window) {
   revealEls.forEach((el) => el.classList.add('visible'));
 }
 
-// ===== Hero arka plan videosu (voldi tarzı) — şimdilik KAPALI, slayt gösterisi aktif =====
-// Gerçek video kullanmak için:
-//   1) Videonuzu  assets/video/afyon.mp4  olarak koyun
-//   2) Aşağıdaki ENABLE_HERO_VIDEO değerini true yapın
-// Video yüklenince otomatik (sessiz, döngülü) oynar; yüklenemezse slayt gösterisi görünür.
+// ===== Hero arka plan videosu (voldi tarzı) — şimdilik KAPALI, foto-panel aktif =====
+// Gerçek video kullanmak için: videonuzu assets/video/afyon.mp4 koyup aşağıyı true yapın.
 const ENABLE_HERO_VIDEO = false;
 const HERO_VIDEO_SRC = 'assets/video/afyon.mp4';
-const heroVideo = document.getElementById('heroVideo');
-if (heroVideo && ENABLE_HERO_VIDEO) {
-  heroVideo.addEventListener('loadeddata', () => {
-    if (heroVideo.videoWidth > 0) {
-      heroVideo.classList.add('active');
-      heroVideo.play().catch(() => {});
-    }
+const heroEl = document.querySelector('.hero');
+if (heroEl && ENABLE_HERO_VIDEO) {
+  const v = document.createElement('video');
+  v.className = 'hero-video';
+  v.muted = true; v.loop = true; v.playsInline = true; v.setAttribute('aria-hidden', 'true');
+  v.addEventListener('loadeddata', () => {
+    if (v.videoWidth > 0) { v.classList.add('active'); v.play().catch(() => {}); }
   });
-  heroVideo.addEventListener('error', () => heroVideo.classList.remove('active'));
-  heroVideo.src = HERO_VIDEO_SRC;
-  heroVideo.load();
+  v.src = HERO_VIDEO_SRC;
+  heroEl.appendChild(v);
 }
 
 // SSS akordeon
