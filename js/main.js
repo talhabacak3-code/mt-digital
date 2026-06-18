@@ -1,4 +1,4 @@
-// ===== MT Digital — main.js =====
+// ===== İmge Dijital — main.js =====
 
 // Mobil menü aç/kapat
 const hamburger = document.getElementById('hamburger');
@@ -46,22 +46,6 @@ if ('IntersectionObserver' in window) {
 } else {
   // IntersectionObserver desteklenmiyorsa hepsini göster
   revealEls.forEach((el) => el.classList.add('visible'));
-}
-
-// ===== Hero arka plan videosu (voldi tarzı) — şimdilik KAPALI, foto-panel aktif =====
-// Gerçek video kullanmak için: videonuzu assets/video/afyon.mp4 koyup aşağıyı true yapın.
-const ENABLE_HERO_VIDEO = false;
-const HERO_VIDEO_SRC = 'assets/video/afyon.mp4';
-const heroEl = document.querySelector('.hero');
-if (heroEl && ENABLE_HERO_VIDEO) {
-  const v = document.createElement('video');
-  v.className = 'hero-video';
-  v.muted = true; v.loop = true; v.playsInline = true; v.setAttribute('aria-hidden', 'true');
-  v.addEventListener('loadeddata', () => {
-    if (v.videoWidth > 0) { v.classList.add('active'); v.play().catch(() => {}); }
-  });
-  v.src = HERO_VIDEO_SRC;
-  heroEl.appendChild(v);
 }
 
 // SSS akordeon

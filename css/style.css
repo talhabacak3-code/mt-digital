@@ -57,6 +57,7 @@ img, svg { display: block; }
 }
 .logo-text { color: var(--ink); }
 .logo-light .logo-text { color: #fff; }
+.logo-img { height: 46px; width: auto; display: block; }
 
 .nav-links { display: flex; align-items: center; gap: 28px; }
 .nav-links a { font-weight: 500; color: var(--gray); transition: color .2s; }
@@ -70,111 +71,34 @@ img, svg { display: block; }
 .hamburger.active span:nth-child(2) { opacity: 0; }
 .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-/* ===== HERO (sinematik / Afyon manzaralı) ===== */
-/* Reklam filmi tadında, ORTADA kompakt 16:9 panel (sayfayı kaplamaz) */
+/* ===== HERO (premium kurumsal · logo + degrade) ===== */
 .hero {
-  position: relative; width: min(960px, 92%); margin: 28px auto 4px;
-  aspect-ratio: 16 / 9; overflow: hidden; border-radius: 18px;
-  background: #0a1430; box-shadow: 0 24px 55px rgba(12, 28, 66, .22);
-}
-.hero-slideshow, .hero-overlay { position: absolute; inset: 0; }
-.hero-slideshow { z-index: 0; }
-.hero-overlay { z-index: 2; }
-.hero-video {
-  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
-  z-index: 1; display: none;
-}
-.hero-video.active { display: block; }
-.hero-slide {
-  position: absolute; inset: 0; background-size: cover; background-position: center;
-  opacity: 0; will-change: opacity, transform; animation: heroKen 50s infinite;
-}
-.hero-slide:nth-child(1)  { animation-delay: 0s; }
-.hero-slide:nth-child(2)  { animation-delay: 5s; }
-.hero-slide:nth-child(3)  { animation-delay: 10s; }
-.hero-slide:nth-child(4)  { animation-delay: 15s; }
-.hero-slide:nth-child(5)  { animation-delay: 20s; }
-.hero-slide:nth-child(6)  { animation-delay: 25s; }
-.hero-slide:nth-child(7)  { animation-delay: 30s; }
-.hero-slide:nth-child(8)  { animation-delay: 35s; }
-.hero-slide:nth-child(9)  { animation-delay: 40s; }
-.hero-slide:nth-child(10) { animation-delay: 45s; }
-@keyframes heroKen {
-  0%   { opacity: 0; transform: scale(1.09); }
-  1.8% { opacity: 1; }
-  9%   { opacity: 1; }
-  10.8%{ opacity: 0; transform: scale(1.005); }
-  100% { opacity: 0; transform: scale(1.005); }
-}
-/* Yazı yok — sadece üst (navbar) ve alt (ok) için çok hafif degrade */
-.hero-overlay {
+  position: relative; overflow: hidden;
   background:
-    linear-gradient(180deg, rgba(6,14,33,.22) 0%, rgba(6,14,33,0) 14%),
-    linear-gradient(0deg, rgba(6,14,33,.32) 0%, rgba(6,14,33,0) 20%);
+    radial-gradient(1100px 460px at 82% -8%, rgba(52,179,201,.20), transparent 60%),
+    radial-gradient(900px 480px at 8% 112%, rgba(27,99,227,.16), transparent 55%),
+    linear-gradient(180deg, #eef5ff 0%, #ffffff 72%);
+  border-bottom: 1px solid var(--line);
 }
 .hero-inner {
-  position: relative; z-index: 3; display: flex; flex-direction: column; gap: 38px;
-  padding-top: 90px; padding-bottom: 80px; width: 100%;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: 58px 22px 72px;
+}
+.hero-logo {
+  width: clamp(210px, 30vw, 320px); height: auto; margin-bottom: 22px;
+  filter: drop-shadow(0 14px 34px rgba(19, 51, 95, .14));
 }
 .eyebrow {
   display: inline-block; background: var(--blue-light); color: var(--blue);
-  font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 999px; margin-bottom: 18px;
+  font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 999px; margin-bottom: 16px;
 }
-.eyebrow-light {
-  background: rgba(255,255,255,.16); color: #fff;
-  border: 1px solid rgba(255,255,255,.28); backdrop-filter: blur(6px);
-}
-.hero-content { max-width: 760px; }
 .hero h1 {
-  font-size: clamp(36px, 6vw, 60px); line-height: 1.08; font-weight: 800; letter-spacing: -1px;
-  color: #fff; text-shadow: 0 3px 24px rgba(0,0,0,.35);
+  font-size: clamp(32px, 5vw, 52px); line-height: 1.08; font-weight: 800;
+  letter-spacing: -1px; color: var(--ink); max-width: 820px;
 }
-.hero h1 .accent { color: #7fb3ff; }
-.hero-sub {
-  color: rgba(255,255,255,.92); font-size: 17px; margin: 20px 0 30px; max-width: 600px;
-  text-shadow: 0 2px 12px rgba(0,0,0,.4);
-}
-.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-.btn-ghost {
-  background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.55);
-  backdrop-filter: blur(6px);
-}
-.btn-ghost:hover { background: rgba(255,255,255,.22); transform: translateY(-2px); }
-
-.hero-highlights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.hl-card {
-  display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: var(--radius);
-  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
-  backdrop-filter: blur(8px); transition: transform .2s, background .2s;
-}
-.hl-card:hover { transform: translateY(-4px); background: rgba(255,255,255,.18); }
-.hl-ico { font-size: 28px; line-height: 1; }
-.hl-card h3 { font-size: 16px; color: #fff; }
-.hl-card p { font-size: 13px; color: rgba(255,255,255,.78); }
-
-/* aşağı kaydır göstergesi */
-.hero-scroll {
-  position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%); z-index: 3;
-  width: 26px; height: 42px; border: 2px solid rgba(255,255,255,.7); border-radius: 14px;
-  display: grid; justify-items: center; padding-top: 7px;
-}
-.hero-scroll span { width: 4px; height: 8px; background: #fff; border-radius: 2px; animation: scrollDot 1.6s infinite; }
-@keyframes scrollDot {
-  0% { opacity: 0; transform: translateY(-4px); }
-  50% { opacity: 1; }
-  100% { opacity: 0; transform: translateY(8px); }
-}
-
-/* ===== TANITIM (banner altı başlık + butonlar) ===== */
-.intro { background: #fff; padding: 62px 0 56px; text-align: center; }
-.intro-inner { max-width: 840px; margin: 0 auto; }
-.intro h1 {
-  font-size: clamp(30px, 4.6vw, 48px); line-height: 1.08; font-weight: 800;
-  letter-spacing: -1px; margin-top: 6px; color: var(--ink);
-}
-.intro h1 .accent { color: var(--blue); }
-.intro-sub { color: var(--gray); font-size: 17px; margin: 18px auto 28px; max-width: 660px; }
-.intro-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.hero h1 .accent { color: var(--blue); }
+.hero-sub { color: var(--gray); font-size: 17px; margin: 18px auto 28px; max-width: 640px; }
+.hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
 /* ===== SECTIONS ===== */
 .section { padding: 80px 0; }
