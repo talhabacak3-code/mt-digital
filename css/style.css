@@ -252,10 +252,10 @@ img, svg { display: block; }
 .btn-white:hover { background: #f0f5ff; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,.18); }
 
 /* ===== PAKETLER ===== */
-.packages { grid-template-columns: repeat(auto-fill, minmax(212px, 1fr)); gap: 18px; align-items: stretch; }
+.packages { grid-template-columns: repeat(5, 1fr); gap: 14px; align-items: stretch; }
 .pkg {
   position: relative; background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 30px 22px; box-shadow: var(--shadow); display: flex; flex-direction: column;
+  padding: 28px 18px; box-shadow: var(--shadow); display: flex; flex-direction: column;
   transition: transform .25s, box-shadow .25s;
 }
 .pkg:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
@@ -376,3 +376,8 @@ a.contact-item:hover { transform: translateX(6px); border-color: var(--blue); }
   .stat:nth-child(odd)::before { display: none; }
   .steps { grid-template-columns: 1fr; }
 }
+
+/* ===== PAKETLER responsive (5 -> 3 -> 2 -> 1) ===== */
+@media (max-width: 1080px) { .packages { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 720px)  { .packages { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px)  { .packages { grid-template-columns: 1fr; } }
