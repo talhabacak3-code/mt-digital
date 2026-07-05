@@ -142,62 +142,6 @@ img, svg { display: block; }
 .wordmark.trendyol { color: #F27A1A; }
 .wordmark.hepsiburada { color: #FF6000; }
 
-/* ===== HİZMETLER (koyu tema · mockup kartlar · alsemdigital tarzı) ===== */
-.services-dark { background: #0b1020; color: #fff; }
-.services-dark .section-head h2 { color: #fff; }
-.services-dark .section-head p { color: #93a0bd; }
-.services-dark .eyebrow { background: rgba(124,92,255,.18); color: #b6a4ff; }
-
-.svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-.svc {
-  position: relative; background: #11172b; border: 1px solid #232a45; border-radius: 20px;
-  padding: 26px 24px 30px; text-align: center; overflow: hidden;
-  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
-}
-.svc:hover { transform: translateY(-8px); border-color: #7c5cff; box-shadow: 0 26px 55px rgba(0,0,0,.5); }
-.svc-badge {
-  position: absolute; top: 16px; left: 50%; transform: translateX(-50%); z-index: 2;
-  background: #7c5cff; color: #fff; font-size: 11px; font-weight: 600; padding: 5px 14px; border-radius: 999px;
-}
-
-.svc-mock { perspective: 900px; margin: 20px auto 22px; max-width: 300px; }
-.svc-screen {
-  position: relative; background: #fff; border-radius: 12px; overflow: hidden; aspect-ratio: 16 / 10;
-  box-shadow: 0 20px 34px rgba(0,0,0,.45), 0 0 0 6px rgba(255,255,255,.04);
-  transition: transform .38s ease;
-}
-.svc:hover .svc-screen { transform: rotateX(7deg) scale(1.05); }
-.svc-screen .bar { height: 20px; background: #eef1f6; display: flex; align-items: center; gap: 5px; padding: 0 9px; }
-.svc-screen .bar i { width: 6px; height: 6px; border-radius: 50%; background: #cbd3e1; }
-.svc-body { position: absolute; inset: 20px 0 0 0; display: flex; align-items: center; justify-content: center; padding: 12px; }
-
-/* mockup içerik tipleri */
-.mock-logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px; }
-.mock-logos img { height: 30px; width: auto; }
-.mock-word { font-size: clamp(18px, 4vw, 26px); }
-.site-mock { width: 100%; }
-.sm-hero { height: 44px; border-radius: 6px; background: linear-gradient(135deg, var(--blue), #34b3c9); margin-bottom: 9px; }
-.sm-line { height: 8px; border-radius: 4px; background: #e4e9f1; margin: 0 auto 6px; width: 82%; }
-.sm-line.short { width: 55%; }
-.sm-btn { height: 15px; width: 62px; border-radius: 5px; background: #7c5cff; margin: 9px auto 0; }
-.mock-ads { display: flex; flex-direction: column; align-items: center; gap: 10px; }
-.mock-ads img { height: 26px; width: auto; }
-.mock-chart { display: flex; align-items: flex-end; gap: 5px; height: 34px; }
-.mock-chart span { width: 8px; border-radius: 2px 2px 0 0; background: #7c5cff; }
-.mock-chart span:nth-child(1) { height: 40%; }
-.mock-chart span:nth-child(2) { height: 72%; background: #34b3c9; }
-.mock-chart span:nth-child(3) { height: 52%; }
-.mock-chart span:nth-child(4) { height: 92%; background: #34b3c9; }
-.mock-chart span:nth-child(5) { height: 64%; }
-
-.svc h3 { color: #fff; font-size: 20px; margin-bottom: 8px; }
-.svc p { color: #93a0bd; font-size: 14.5px; line-height: 1.55; margin-bottom: 20px; }
-.btn-incele {
-  display: inline-block; background: #7c5cff; color: #fff; font-weight: 600; font-size: 14px;
-  padding: 11px 32px; border-radius: 10px; transition: background .2s, transform .2s, box-shadow .2s;
-}
-.btn-incele:hover { background: #6a49f0; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(124,92,255,.4); }
-
 /* ===== PLATFORM ŞERİDİ ===== */
 .platforms { background: #fff; border-bottom: 1px solid var(--line); padding: 30px 0; }
 .platforms-title {
@@ -408,7 +352,6 @@ a.contact-item:hover { transform: translateX(6px); border-color: var(--blue); }
   .contact-grid { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
-  .svc-grid { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .steps .step:not(:last-child)::after { display: none; }
 }
@@ -430,7 +373,6 @@ a.contact-item:hover { transform: translateX(6px); border-color: var(--blue); }
   .section { padding: 56px 0; }
   .hero-inner { padding: 44px 18px 52px; }
   .grid-3 { grid-template-columns: 1fr; }
-  .svc-grid { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; gap: 28px; }
   .hero-actions .btn { flex: 1; }
   .cta-banner { padding: 30px 26px; flex-direction: column; align-items: flex-start; text-align: left; }
