@@ -75,5 +75,36 @@ toTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
+// Sayaç animasyonu (istatistikler görünürken 0'dan hedefe sayar)
+const counters = document.querySelectorAll('.count');
+const runCounter = (el) => {
+  const target = +el.dataset.target || 0;
+  const duration = 1400;
+  const start = performance.now();
+  const step = (now) => {
+    const p = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+    el.textContent = Math.round(eased * target);
+    if (p < 1) requestAnimationFrame(step);
+    else el.textContent = target;
+  };
+  requestAnimationFrame(step);
+};
+if (counters.length) {
+  if ('IntersectionObserver' in window) {
+    const cObs = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) { runCounter(entry.target); obs.unobserve(entry.target); }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    counters.forEach((c) => cObs.observe(c));
+  } else {
+    counters.forEach((c) => (c.textContent = c.dataset.target));
+  }
+}
+
 // Footer yılını güncelle
 document.getElementById('year').textContent = new Date().getFullYear();
