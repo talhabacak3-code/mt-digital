@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=3" />
+  <link rel="stylesheet" href="css/style.css?v=5" />
 </head>
 <body>
 
@@ -39,6 +39,7 @@
     <div class="container nav">
       <a href="#hero" class="logo" aria-label="İmge Dijital ana sayfa">
         <img src="assets/img/logo.png" alt="İmge Dijital logo" class="logo-img" width="140" height="46" />
+        <span class="logo-wordmark">İmge Dijital</span>
       </a>
 
       <nav class="nav-links" id="navLinks" aria-label="Ana menü">
@@ -57,39 +58,102 @@
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="hero">
-    <div class="hero-orbs" aria-hidden="true">
-      <span class="orb orb-1"></span>
-      <span class="orb orb-2"></span>
-      <span class="orb orb-3"></span>
+  <!-- ===== HERO (koyu premium · $100k ajans) ===== -->
+  <section class="hx" id="hero">
+    <!-- arka plan katmanları -->
+    <div class="hx-bg" aria-hidden="true">
+      <div class="hx-grid"></div>
+      <div class="hx-spot"></div>
+      <div class="hx-glow hx-glow-1"></div>
+      <div class="hx-glow hx-glow-2"></div>
+      <div class="hx-particles">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="hx-noise"></div>
     </div>
-    <div class="hero-floats" aria-hidden="true">
-      <span class="float-chip fc1"><img src="assets/icons/instagram.svg" alt="" loading="lazy" /></span>
-      <span class="float-chip fc2"><img src="assets/icons/googleads.svg" alt="" loading="lazy" /></span>
-      <span class="float-chip fc3"><img src="assets/icons/meta.svg" alt="" loading="lazy" /></span>
-      <span class="float-chip fc4"><img src="assets/icons/figma.svg" alt="" loading="lazy" /></span>
-      <span class="float-chip fc5"><img src="assets/icons/youtube.svg" alt="" loading="lazy" /></span>
-      <span class="float-chip fc6"><img src="assets/icons/tiktok.svg" alt="" loading="lazy" /></span>
-    </div>
+    <div class="hx-cursor" id="hxCursor" aria-hidden="true"></div>
 
-    <div class="container hero-inner">
-      <img src="assets/img/logo.png" alt="İmge Dijital — dijital pazarlama ajansı" class="hero-logo" width="300" height="222" fetchpriority="high" />
-      <span class="eyebrow">📍 Afyonkarahisar · Tüm Türkiye'ye Dijital Hizmet</span>
-      <h1>Markanızı <span class="accent">Dijitalde</span> Büyütelim</h1>
-      <p class="hero-sub">
-        Kurumsal web tasarım, e-ticaret, SEO ve reklam yönetimiyle işletmenizi daha görünür,
-        daha güçlü ve daha kârlı hale getiriyoruz. Sonuç odaklı, şeffaf ve size özel.
-      </p>
-      <div class="hero-actions">
-        <a href="https://wa.me/905536769156?text=Merhaba,%20teklif%20almak%20istiyorum" class="btn btn-primary btn-shine" target="_blank" rel="noopener">
-          <svg class="ico" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.82 9.82 0 0 0 1.51 5.26l-.999 3.648 3.978-1.297zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-          Teklif Al
-        </a>
-        <a href="#hizmetler" class="btn btn-outline">Portfolyoyu İncele</a>
+    <div class="container hx-inner">
+      <!-- SOL: içerik -->
+      <div class="hx-left">
+        <span class="hx-eyebrow"><i class="hx-dot"></i> Dijital Ajans · Afyonkarahisar</span>
+        <h1 class="hx-title">
+          <span class="hx-line">Sadece web sitesi değil,</span>
+          <span class="hx-line">markanızı büyüten <span class="hx-accent">dijital deneyimler</span></span>
+          <span class="hx-line">tasarlıyoruz.</span>
+        </h1>
+        <p class="hx-sub">
+          Web tasarım, yazılım, SEO, yapay zeka, dijital pazarlama ve marka kimliğiyle
+          işletmenizi bir sonraki seviyeye taşıyoruz.
+        </p>
+        <div class="hx-cta">
+          <a href="https://wa.me/905536769156?text=Merhaba,%20projemi%20ba%C5%9Flatmak%20istiyorum" class="hx-btn hx-btn-primary magnetic" target="_blank" rel="noopener">
+            <span>Projeni Başlat</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M5 12h12.17l-5.58-5.59L13 5l8 8-8 8-1.41-1.41L17.17 14H5z"/></svg>
+          </a>
+          <a href="#hizmetler" class="hx-btn hx-btn-ghost">
+            <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+            Çalışmaları Gör
+          </a>
+        </div>
+        <div class="hx-trust">
+          <span class="hx-stars" aria-label="5 üzerinden 5 yıldız müşteri memnuniyeti">★★★★★</span>
+          <span class="hx-sep"></span>
+          <span>5+ Yıl Tecrübe</span>
+          <span class="hx-sep"></span>
+          <span>24 Saatte Dönüş</span>
+          <span class="hx-sep"></span>
+          <span>Ücretsiz İlk Görüşme</span>
+        </div>
       </div>
 
+      <!-- SAĞ: premium interaktif görsel -->
+      <div class="hx-right" aria-hidden="true">
+        <div class="hx-visual" id="hxVisual">
+          <div class="hx-orb"></div>
+
+          <!-- ana tarayıcı/panel kartı -->
+          <div class="glass gc-main" data-depth="7">
+            <div class="gc-bar">
+              <span class="d r"></span><span class="d y"></span><span class="d g"></span>
+              <div class="gc-url">imgedijital.com</div>
+            </div>
+            <div class="gc-site">
+              <div class="gc-hero"></div>
+              <div class="gc-rows">
+                <div class="gc-block"></div>
+                <div class="gc-block"></div>
+                <div class="gc-block"></div>
+              </div>
+              <div class="gc-line l1"></div>
+              <div class="gc-line l2"></div>
+            </div>
+          </div>
+
+          <!-- yüzen küçük glass kartlar -->
+          <div class="glass gc-chip gc-a">
+            <img src="assets/icons/figma.svg" alt="" loading="lazy" />
+            <div><b>Tasarım</b><small>Kusursuz arayüz</small></div>
+          </div>
+          <div class="glass gc-chip gc-b">
+            <img src="assets/icons/googleads.svg" alt="" loading="lazy" />
+            <div><b>Reklam</b><small>Doğru kitle</small></div>
+          </div>
+
+          <!-- büyüme kartı (illüstratif) -->
+          <div class="glass gc-growth gc-c">
+            <div class="gg-top"><span>Büyüme</span><span class="gg-up">↗</span></div>
+            <div class="gg-chart">
+              <span style="--h:38%"></span><span style="--h:55%"></span><span style="--h:44%"></span>
+              <span style="--h:70%"></span><span style="--h:60%"></span><span style="--h:88%"></span><span style="--h:100%"></span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <a href="#hizmetler" class="hx-scroll" aria-label="Aşağı kaydır"><span></span></a>
   </section>
 
   <!-- ===== PLATFORM ŞERİDİ ===== -->
@@ -665,6 +729,6 @@
   }
   </script>
 
-  <script src="js/main.js?v=3"></script>
+  <script src="js/main.js?v=5"></script>
 </body>
 </html>

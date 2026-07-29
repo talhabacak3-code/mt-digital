@@ -106,5 +106,50 @@ if (counters.length) {
   }
 }
 
+// ===== Hero (.hx) mikro etkileşimleri: cursor glow + parallax + magnetic =====
+(function () {
+  const hx = document.querySelector('.hx');
+  if (!hx) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine = window.matchMedia('(pointer: fine)').matches;
+  if (reduce || !fine) return; // dokunmatik/erişilebilirlik: kapalı
+
+  const visual = document.getElementById('hxVisual');
+  const layers = visual ? Array.from(visual.querySelectorAll('[data-depth]')) : [];
+  const magnets = Array.from(hx.querySelectorAll('.magnetic'));
+  let rect = hx.getBoundingClientRect();
+  window.addEventListener('resize', () => { rect = hx.getBoundingClientRect(); });
+
+  let mx = 0, my = 0, raf = null;
+  hx.addEventListener('mouseenter', () => hx.classList.add('cursor-on'));
+  hx.addEventListener('mouseleave', () => {
+    hx.classList.remove('cursor-on');
+    layers.forEach((l) => (l.style.transform = ''));
+    magnets.forEach((m) => (m.style.transform = ''));
+  });
+  hx.addEventListener('mousemove', (e) => {
+    mx = e.clientX; my = e.clientY;
+    if (!raf) raf = requestAnimationFrame(update);
+  });
+  function update() {
+    raf = null;
+    hx.style.setProperty('--mx', (mx - rect.left) + 'px');
+    hx.style.setProperty('--my', (my - rect.top) + 'px');
+    const px = (mx - rect.left) / rect.width - 0.5;
+    const py = (my - rect.top) / rect.height - 0.5;
+    layers.forEach((l) => {
+      const d = +l.dataset.depth || 0;
+      l.style.transform = 'translate(' + (px * d).toFixed(1) + 'px,' + (py * d).toFixed(1) + 'px)';
+    });
+    magnets.forEach((m) => {
+      const r = m.getBoundingClientRect();
+      const dx = mx - (r.left + r.width / 2);
+      const dy = my - (r.top + r.height / 2);
+      if (Math.hypot(dx, dy) < 130) m.style.transform = 'translate(' + (dx * 0.25).toFixed(1) + 'px,' + (dy * 0.25).toFixed(1) + 'px)';
+      else m.style.transform = '';
+    });
+  }
+})();
+
 // Footer yılını güncelle
 document.getElementById('year').textContent = new Date().getFullYear();
