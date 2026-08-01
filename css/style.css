@@ -738,3 +738,23 @@ a.contact-item:hover { transform: translateX(6px); border-color: var(--blue); }
   .gc-chip, .gc-growth, .hx-line, .hx-eyebrow, .hx-sub, .hx-cta, .hx-trust, .hx-visual { animation: none !important; }
   .hx-line, .hx-eyebrow, .hx-sub, .hx-cta, .hx-trust, .hx-visual { opacity: 1; transform: none; }
 }
+
+/* ===== HERO rafine (10/10 hedefi) ===== */
+/* Tipografi: başlığa karakterli display font */
+.hx-title { font-family: 'Space Grotesk', 'Poppins', sans-serif; letter-spacing: -1.8px; }
+/* Erişilebilirlik: kontrast + görünür odak halkası */
+.hx-sub { color: #aeb8cc; }
+.hx-trust { color: #b6bfd2; }
+.hx-trust .hx-sep { background: rgba(255,255,255,.3); }
+.hx-stars { text-shadow: 0 0 14px rgba(245,179,1,.35); }
+a:focus-visible, button:focus-visible, .hx-btn:focus-visible, .nav-cta:focus-visible {
+  outline: 2px solid #34b3c9; outline-offset: 3px; border-radius: 12px;
+}
+/* Premium his: cam kartlarda ince üst parıltı */
+.glass { box-shadow: 0 30px 70px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.07); }
+/* Mobil: gizlemek yerine sade mockup goster (wow korunur) */
+@media (max-width: 680px) {
+  .hx-right { display: flex; order: 2; margin-top: 6px; }
+  .hx-visual { max-width: 300px; }
+  .gc-chip, .gc-growth { display: none; }
+}
