@@ -770,3 +770,17 @@ a:focus-visible, button:focus-visible, .hx-btn:focus-visible, .nav-cta:focus-vis
     linear-gradient(90deg, rgba(9,9,11,.9) 0%, rgba(9,9,11,.6) 46%, rgba(9,9,11,.35) 100%),
     linear-gradient(0deg, rgba(9,9,11,.65), transparent 42%);
 }
+
+/* ===== Video aktifken sadeleştir: fazladan katmanları gizle, içeriği ortala ===== */
+.hx.has-video .hx-right,
+.hx.has-video .hx-grid,
+.hx.has-video .hx-spot,
+.hx.has-video .hx-glow,
+.hx.has-video .hx-particles,
+.hx.has-video .hx-noise,
+.hx.has-video .hx-cursor { display: none; }
+.hx.has-video .hx-inner { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+.hx.has-video .hx-left { align-items: center; max-width: 860px; }
+.hx.has-video .hx-sub { margin-left: auto; margin-right: auto; }
+.hx.has-video .hx-cta,
+.hx.has-video .hx-trust { justify-content: center; }
