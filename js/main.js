@@ -151,5 +151,23 @@ if (counters.length) {
   }
 })();
 
+// ===== Hero arka plan videosu (opsiyonel) =====
+// Kullanmak için: videonuzu assets/video/hero.mp4 olarak koyun ve aşağıyı true yapın.
+var ENABLE_HERO_VIDEO = false;
+var HERO_VIDEO_SRC = 'assets/video/hero.mp4';
+var hxVideo = document.getElementById('hxVideo');
+if (hxVideo && ENABLE_HERO_VIDEO) {
+  hxVideo.addEventListener('loadeddata', function () {
+    if (hxVideo.videoWidth > 0) {
+      hxVideo.classList.add('active');
+      var sec = hxVideo.closest('.hx');
+      if (sec) sec.classList.add('has-video');
+      hxVideo.play().catch(function () {});
+    }
+  });
+  hxVideo.src = HERO_VIDEO_SRC;
+  hxVideo.load();
+}
+
 // Footer yılını güncelle
 document.getElementById('year').textContent = new Date().getFullYear();
