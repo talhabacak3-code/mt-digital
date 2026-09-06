@@ -153,7 +153,7 @@ if (counters.length) {
 
 // ===== Hero arka plan videosu (opsiyonel) =====
 // Kullanmak için: videonuzu assets/video/hero.mp4 olarak koyun ve aşağıyı true yapın.
-var ENABLE_HERO_VIDEO = false;
+var ENABLE_HERO_VIDEO = true;
 var HERO_VIDEO_SRC = 'assets/video/hero.mp4';
 var hxVideo = document.getElementById('hxVideo');
 if (hxVideo && ENABLE_HERO_VIDEO) {
