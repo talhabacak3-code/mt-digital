@@ -784,3 +784,25 @@ a:focus-visible, button:focus-visible, .hx-btn:focus-visible, .nav-cta:focus-vis
 .hx.has-video .hx-sub { margin-left: auto; margin-right: auto; }
 .hx.has-video .hx-cta,
 .hx.has-video .hx-trust { justify-content: center; }
+
+/* ===== Video arka planda: metni sola al, sağda video açıkta kalsın (yazı videoyu kapatmasın) ===== */
+.hx.has-video .hx-inner { grid-template-columns: 1fr; justify-items: start; text-align: left; }
+.hx.has-video .hx-left { align-items: flex-start; max-width: 600px; }
+.hx.has-video .hx-sub { margin-left: 0; margin-right: 0; }
+.hx.has-video .hx-cta,
+.hx.has-video .hx-trust { justify-content: flex-start; }
+.hx.has-video::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(9,9,11,.94) 0%, rgba(9,9,11,.75) 32%, rgba(9,9,11,.3) 62%, rgba(9,9,11,.04) 100%),
+    linear-gradient(0deg, rgba(9,9,11,.45), transparent 46%);
+}
+/* Dar ekran: yan yana yer yok -> metni ortala, dengeli karartma */
+@media (max-width: 860px) {
+  .hx.has-video .hx-inner { justify-items: center; text-align: center; }
+  .hx.has-video .hx-left { align-items: center; margin: 0 auto; }
+  .hx.has-video .hx-sub { margin-left: auto; margin-right: auto; }
+  .hx.has-video .hx-cta,
+  .hx.has-video .hx-trust { justify-content: center; }
+  .hx.has-video::after { background: linear-gradient(0deg, rgba(9,9,11,.82), rgba(9,9,11,.5)); }
+}
