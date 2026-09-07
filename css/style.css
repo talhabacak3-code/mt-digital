@@ -712,9 +712,9 @@ a.contact-item:hover { transform: translateX(6px); border-color: var(--blue); }
 .header:not(.scrolled) { background: rgba(9,9,11,.55); border-bottom-color: rgba(255,255,255,.07); box-shadow: none; }
 .header:not(.scrolled) .nav-links:not(.open) a { color: rgba(255,255,255,.82); }
 .header:not(.scrolled) .nav-links:not(.open) a:hover { color: #fff; }
-.header:not(.scrolled) .logo-img { display: none; }
+.header:not(.scrolled) .logo-img { display: block; filter: brightness(0) invert(1); }
 .logo-wordmark { display: none; font-weight: 800; font-size: 21px; color: #fff; letter-spacing: -.3px; }
-.header:not(.scrolled) .logo-wordmark { display: inline-block; }
+.header:not(.scrolled) .logo-wordmark { display: none; }
 .header:not(.scrolled) .hamburger span { background: #fff; }
 .header:not(.scrolled) .nav-cta { background: rgba(255,255,255,.12) !important; border: 1px solid rgba(255,255,255,.28); color: #fff !important; backdrop-filter: blur(6px); }
 .header:not(.scrolled) .nav-cta:hover { background: rgba(255,255,255,.2) !important; }
