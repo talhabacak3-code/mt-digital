@@ -806,3 +806,31 @@ a:focus-visible, button:focus-visible, .hx-btn:focus-visible, .nav-cta:focus-vis
   .hx.has-video .hx-trust { justify-content: center; }
   .hx.has-video::after { background: linear-gradient(0deg, rgba(9,9,11,.82), rgba(9,9,11,.5)); }
 }
+
+/* ===== Bölüm başlıkları — daha premium/efektif ===== */
+.section-head { margin-bottom: 54px; }
+.section-head .eyebrow {
+  text-transform: uppercase; letter-spacing: 1.3px; font-size: 12px; font-weight: 700;
+  color: var(--blue);
+  background: linear-gradient(120deg, rgba(27,99,227,.10), rgba(52,179,201,.12));
+  border: 1px solid rgba(27,99,227,.18);
+  box-shadow: 0 6px 16px rgba(27,99,227,.08);
+  padding: 7px 16px;
+}
+.section-head .eyebrow::before {
+  content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+  margin-right: 9px; vertical-align: middle;
+  background: linear-gradient(120deg, #1b63e3, #34b3c9);
+  box-shadow: 0 0 0 3px rgba(52,179,201,.15);
+}
+.section-head h2 {
+  font-family: 'Space Grotesk', 'Poppins', sans-serif;
+  font-size: clamp(28px, 3.7vw, 44px); letter-spacing: -1px; line-height: 1.12; margin-bottom: 0;
+}
+.section-head h2::after {
+  content: ""; display: block; width: 66px; height: 4px; margin: 18px auto 0;
+  border-radius: 4px; background: linear-gradient(90deg, #1b63e3, #34b3c9);
+}
+.section-head p { margin-top: 16px; font-size: 16.5px; }
+/* Koyu hizmetler bölümü kullanılırsa da uyumlu kalsın */
+.services-dark .section-head .eyebrow { color: #b6a4ff; background: rgba(124,92,255,.16); border-color: rgba(124,92,255,.28); }
