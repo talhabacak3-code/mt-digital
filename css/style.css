@@ -834,3 +834,19 @@ a:focus-visible, button:focus-visible, .hx-btn:focus-visible, .nav-cta:focus-vis
 .section-head p { margin-top: 16px; font-size: 16.5px; }
 /* Koyu hizmetler bölümü kullanılırsa da uyumlu kalsın */
 .services-dark .section-head .eyebrow { color: #b6a4ff; background: rgba(124,92,255,.16); border-color: rgba(124,92,255,.28); }
+
+/* ===== Hizmet kartları: gölgeli + üstüne gelince büyüyen premium hover ===== */
+.svc-card {
+  position: relative;
+  box-shadow: 0 12px 34px rgba(20, 40, 90, .10);
+  transition: transform .32s cubic-bezier(.22,.68,.31,1.2), box-shadow .32s ease, border-color .3s ease;
+}
+.svc-card:hover {
+  transform: translateY(-10px) scale(1.035);
+  box-shadow: 0 30px 60px rgba(20, 40, 90, .20);
+  border-color: #cfe0fb;
+  z-index: 2;
+}
+.svc-ico { transition: transform .32s cubic-bezier(.22,.68,.31,1.2); }
+.svc-card:hover .svc-ico { transform: scale(1.12) rotate(-5deg); }
+.svc-card:hover .svc-cta { color: var(--blue-dark); transform: translateX(4px); }
