@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=19" />
+  <link rel="stylesheet" href="css/style.css?v=20" />
 </head>
 <body>
 
@@ -130,62 +130,41 @@
         <p>Tasarımdan reklama, uçtan uca tüm dijital ihtiyaçlarınız tek çatı altında.</p>
       </div>
 
-      <div class="grid grid-3">
-        <article class="card svc-card reveal">
-          <span class="svc-ico">🖥️</span>
-          <h3>Kurumsal Web Tasarım</h3>
-          <p>Modern, hızlı ve mobil uyumlu; markanızı en iyi yansıtan kurumsal web siteleri.</p>
-          <a href="https://wa.me/905536769156?text=Merhaba,%20Kurumsal%20Web%20Tasar%C4%B1m%20i%C3%A7in%20teklif%20almak%20istiyorum" class="svc-cta" target="_blank" rel="noopener">Teklif Al →</a>
-        </article>
-
-        <article class="card svc-card reveal">
-          <span class="svc-ico">🛒</span>
-          <h3>E-Ticaret</h3>
-          <p>Satışa hazır, güvenli ve yönetimi kolay e-ticaret siteleri; ödeme ve kargo entegrasyonları.</p>
-          <a href="https://wa.me/905536769156?text=Merhaba,%20E-Ticaret%20sitesi%20i%C3%A7in%20teklif%20almak%20istiyorum" class="svc-cta" target="_blank" rel="noopener">Teklif Al →</a>
-        </article>
-
-        <article class="card svc-card reveal">
-          <span class="svc-ico">🔎</span>
-          <h3>SEO</h3>
-          <p>Google'da üst sıralara çıkın. Teknik SEO, içerik ve backlink ile kalıcı organik trafik.</p>
-          <a href="https://wa.me/905536769156?text=Merhaba,%20SEO%20hizmeti%20i%C3%A7in%20teklif%20almak%20istiyorum" class="svc-cta" target="_blank" rel="noopener">Teklif Al →</a>
-        </article>
-
-        <article class="card svc-card reveal">
-          <span class="svc-ico">📣</span>
-          <h3>Google Ads</h3>
-          <p>Sizi arayan müşterinin karşısına çıkın. Dönüşüm odaklı, bütçe dostu Google reklam yönetimi.</p>
-          <a href="https://wa.me/905536769156?text=Merhaba,%20Google%20Ads%20i%C3%A7in%20teklif%20almak%20istiyorum" class="svc-cta" target="_blank" rel="noopener">Teklif Al →</a>
-        </article>
-
-        <article class="card svc-card reveal">
-          <span class="svc-ico">📱</span>
-          <h3>Meta Reklamları</h3>
-          <p>Instagram &amp; Facebook'ta doğru kitleye ulaşın. Hedefli kampanyalarla satış ve etkileşim.</p>
-          <a href="https://wa.me/905536769156?text=Merhaba,%20Meta%20Reklamlar%C4%B1%20i%C3%A7in%20teklif%20almak%20istiyorum" class="svc-cta" target="_blank" rel="noopener">Teklif Al →</a>
-        </article>
-
-        <article class="card svc-card reveal">
-          <span class="svc-ico">💬</span>
-          <h3>Sosyal Medya Yönetimi</h3>
-          <p>İçerik planı, tasarım ve paylaşım yönetimi ile markanızı sosyal medyada canlı tutuyoruz.</p>
-          <a href="https://wa.me/905536769156?text=Merhaba,%20Sosyal%20Medya%20Y%C3%B6netimi%20i%C3%A7in%20teklif%20almak%20istiyorum" class="svc-cta" target="_blank" rel="noopener">Teklif Al →</a>
-        </article>
-
-        <article class="card svc-card reveal">
-          <span class="svc-ico">🎨</span>
-          <h3>Logo ve Kurumsal Kimlik</h3>
-          <p>Akılda kalıcı logo, kartvizit ve kurumsal kimlik tasarımıyla markanıza profesyonel bir yüz.</p>
-          <a href="https://wa.me/905536769156?text=Merhaba,%20Logo%20ve%20Kurumsal%20Kimlik%20i%C3%A7in%20teklif%20almak%20istiyorum" class="svc-cta" target="_blank" rel="noopener">Teklif Al →</a>
-        </article>
-
-        <article class="card svc-card reveal">
-          <span class="svc-ico">🎬</span>
-          <h3>Video Reklam</h3>
-          <p>Tanıtım, ürün ve reklam videolarıyla markanızı hareketlendirin; kısa ve etkili prodüksiyon.</p>
-          <a href="https://wa.me/905536769156?text=Merhaba,%20Video%20Reklam%20i%C3%A7in%20teklif%20almak%20istiyorum" class="svc-cta" target="_blank" rel="noopener">Teklif Al →</a>
-        </article>
+      <div class="svc-carousel" id="svcCarousel" aria-label="Hizmetler — kayan galeri">
+        <div class="svc-track" id="svcTrack">
+          <article class="svc-slide">
+            <div class="svc-media"><img src="assets/img/services/web.jpg" alt="Kurumsal web tasarım" loading="lazy" width="430" height="287" /><h3>Kurumsal Web Tasarım</h3></div>
+            <div class="svc-body"><p>Modern, hızlı ve mobil uyumlu; markanızı en iyi yansıtan kurumsal web siteleri.</p><a href="https://wa.me/905536769156?text=Merhaba,%20Kurumsal%20Web%20Tasar%C4%B1m%20i%C3%A7in%20teklif%20almak%20istiyorum" class="svc-cta" target="_blank" rel="noopener">Teklif Al →</a></div>
+          </article>
+          <article class="svc-slide">
+            <div class="svc-media"><img src="assets/img/services/eticaret.jpg" alt="E-ticaret" loading="lazy" width="430" height="287" /><h3>E-Ticaret</h3></div>
+            <div class="svc-body"><p>Satışa hazır, güvenli ve yönetimi kolay e-ticaret siteleri; ödeme ve kargo entegrasyonları.</p><a href="https://wa.me/905536769156?text=Merhaba,%20E-Ticaret%20sitesi%20i%C3%A7in%20teklif%20almak%20istiyorum" class="svc-cta" target="_blank" rel="noopener">Teklif Al →</a></div>
+          </article>
+          <article class="svc-slide">
+            <div class="svc-media"><img src="assets/img/services/seo.jpg" alt="SEO ve analiz" loading="lazy" width="430" height="287" /><h3>SEO</h3></div>
+            <div class="svc-body"><p>Google'da üst sıralara çıkın. Teknik SEO, içerik ve backlink ile kalıcı organik trafik.</p><a href="https://wa.me/905536769156?text=Merhaba,%20SEO%20hizmeti%20i%C3%A7in%20teklif%20almak%20istiyorum" class="svc-cta" target="_blank" rel="noopener">Teklif Al →</a></div>
+          </article>
+          <article class="svc-slide">
+            <div class="svc-media"><img src="assets/img/services/googleads.jpg" alt="Google Ads" loading="lazy" width="430" height="287" /><h3>Google Ads</h3></div>
+            <div class="svc-body"><p>Sizi arayan müşterinin karşısına çıkın. Dönüşüm odaklı, bütçe dostu Google reklam yönetimi.</p><a href="https://wa.me/905536769156?text=Merhaba,%20Google%20Ads%20i%C3%A7in%20teklif%20almak%20istiyorum" class="svc-cta" target="_blank" rel="noopener">Teklif Al →</a></div>
+          </article>
+          <article class="svc-slide">
+            <div class="svc-media"><img src="assets/img/services/meta.jpg" alt="Meta reklamları" loading="lazy" width="430" height="287" /><h3>Meta Reklamları</h3></div>
+            <div class="svc-body"><p>Instagram &amp; Facebook'ta doğru kitleye ulaşın. Hedefli kampanyalarla satış ve etkileşim.</p><a href="https://wa.me/905536769156?text=Merhaba,%20Meta%20Reklamlar%C4%B1%20i%C3%A7in%20teklif%20almak%20istiyorum" class="svc-cta" target="_blank" rel="noopener">Teklif Al →</a></div>
+          </article>
+          <article class="svc-slide">
+            <div class="svc-media"><img src="assets/img/services/sosyal.jpg" alt="Sosyal medya yönetimi" loading="lazy" width="430" height="287" /><h3>Sosyal Medya Yönetimi</h3></div>
+            <div class="svc-body"><p>İçerik planı, tasarım ve paylaşım yönetimi ile markanızı sosyal medyada canlı tutuyoruz.</p><a href="https://wa.me/905536769156?text=Merhaba,%20Sosyal%20Medya%20Y%C3%B6netimi%20i%C3%A7in%20teklif%20almak%20istiyorum" class="svc-cta" target="_blank" rel="noopener">Teklif Al →</a></div>
+          </article>
+          <article class="svc-slide">
+            <div class="svc-media"><img src="assets/img/services/logo.jpg" alt="Logo ve kurumsal kimlik" loading="lazy" width="430" height="287" /><h3>Logo &amp; Kurumsal Kimlik</h3></div>
+            <div class="svc-body"><p>Akılda kalıcı logo, kartvizit ve kurumsal kimlik tasarımıyla markanıza profesyonel bir yüz.</p><a href="https://wa.me/905536769156?text=Merhaba,%20Logo%20ve%20Kurumsal%20Kimlik%20i%C3%A7in%20teklif%20almak%20istiyorum" class="svc-cta" target="_blank" rel="noopener">Teklif Al →</a></div>
+          </article>
+          <article class="svc-slide">
+            <div class="svc-media"><img src="assets/img/services/video.jpg" alt="Video reklam" loading="lazy" width="430" height="287" /><h3>Video Reklam</h3></div>
+            <div class="svc-body"><p>Tanıtım, ürün ve reklam videolarıyla markanızı hareketlendirin; kısa ve etkili prodüksiyon.</p><a href="https://wa.me/905536769156?text=Merhaba,%20Video%20Reklam%20i%C3%A7in%20teklif%20almak%20istiyorum" class="svc-cta" target="_blank" rel="noopener">Teklif Al →</a></div>
+          </article>
+        </div>
       </div>
     </div>
   </section>
@@ -706,5 +685,17 @@
   <script src="js/main.js?v=16"></script>
   <script src="js/consent.js?v=3"></script>
   <script src="js/support.js?v=4"></script>
+  <script>
+    // Hizmet carousel'ini sonsuz döngü için ikile
+    (function () {
+      var t = document.getElementById('svcTrack');
+      if (!t) return;
+      Array.prototype.slice.call(t.children).forEach(function (el) {
+        var c = el.cloneNode(true);
+        c.setAttribute('aria-hidden', 'true');
+        t.appendChild(c);
+      });
+    })();
+  </script>
 </body>
 </html>
