@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=16" />
+  <link rel="stylesheet" href="css/style.css?v=17" />
 </head>
 <body>
 
@@ -609,10 +609,47 @@
     <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 4l8 8-1.41 1.41L13 7.83V20h-2V7.83l-5.59 5.58L4 12z"/></svg>
   </button>
 
-  <!-- ===== SABİT WHATSAPP BUTONU ===== -->
-  <a href="https://wa.me/905536769156?text=Merhaba,%20teklif%20almak%20istiyorum" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp ile iletişime geçin">
-    <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path fill="currentColor" d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.82 9.82 0 0 0 1.51 5.26l-.999 3.648 3.978-1.297zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-  </a>
+  <!-- ===== DESTEK MERKEZİ WIDGET ===== -->
+  <div class="support" id="support">
+    <div class="support-panel" id="supportPanel" role="dialog" aria-label="İmge Destek asistanı" aria-hidden="true">
+      <div class="support-head">
+        <div class="sh-id">
+          <span class="s-avatar">İD</span>
+          <div>
+            <strong>İmge Destek</strong>
+            <span><span class="s-live"></span> Çevrimiçi · anında yanıt</span>
+          </div>
+        </div>
+        <button class="support-close" id="supportClose" type="button" aria-label="Kapat">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M18.3 5.71 12 12l6.3 6.29-1.42 1.42L10.59 13.4 4.29 19.7 2.87 18.29 9.17 12 2.87 5.71 4.29 4.29 10.59 10.6 16.88 4.29z"/></svg>
+        </button>
+      </div>
+
+      <div class="support-body" id="supportBody" aria-live="polite"></div>
+
+      <div class="support-chips" id="supportChips">
+        <button type="button" data-q="Fiyatlar nasıl?">Fiyatlar</button>
+        <button type="button" data-q="Ne kadar sürede teslim edilir?">Teslim süresi</button>
+        <button type="button" data-q="Hangi hizmetleri veriyorsunuz?">Hizmetler</button>
+        <button type="button" data-q="Paketler neler?">Paketler</button>
+        <button type="button" data-q="İletişim bilgileri">İletişim</button>
+      </div>
+
+      <form class="support-input" id="supportForm" autocomplete="off">
+        <input id="supportMsg" type="text" placeholder="Sorunuzu yazın…" aria-label="Mesajınız" />
+        <button type="submit" class="support-send" aria-label="Gönder">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M3.4 20.4 21 12 3.4 3.6 3 10l12 2-12 2z"/></svg>
+        </button>
+      </form>
+
+      <a class="support-wa" href="https://wa.me/905536769156?text=Merhaba,%20canl%C4%B1%20destek%20istiyorum" target="_blank" rel="noopener">WhatsApp'tan canlı uzmana bağlan →</a>
+    </div>
+
+    <button class="support-fab" id="supportFab" type="button" aria-expanded="false" aria-controls="supportPanel" aria-label="Destek merkezini aç">
+      <svg class="fab-open" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M12 2a9 9 0 0 0-9 9v4a3 3 0 0 0 3 3h1a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H5.08A7 7 0 0 1 19 11h-1.08a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1H19a3 3 0 0 0 .92-.15A3.5 3.5 0 0 1 16.5 21H13a1 1 0 1 0 0 2h3.5A5.5 5.5 0 0 0 22 17.5V11a9 9 0 0 0-9-9z"/></svg>
+      <span class="fab-label">Destek</span>
+    </button>
+  </div>
 
   <!-- ===== YAPISAL VERİ (JSON-LD) ===== -->
   <script type="application/ld+json">
@@ -651,5 +688,6 @@
   </script>
 
   <script src="js/main.js?v=16"></script>
+  <script src="js/support.js?v=2"></script>
 </body>
 </html>
