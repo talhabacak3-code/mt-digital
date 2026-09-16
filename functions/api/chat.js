@@ -1,12 +1,17 @@
 // =====================================================================
 // İmge Dijital — Destek AI (Cloudflare Pages Function)
 // Route: /api/chat  (POST)
-// Anahtar (ANTHROPIC_API_KEY) yalnızca burada, sunucuda kalır; tarayıcıya
-// ASLA düşmez. Frontend (js/support.js) bu uca POST atar.
 //
-// Cloudflare Pages → Settings → Variables and Secrets:
-//   ANTHROPIC_API_KEY = sk-ant-...   (Secret / encrypted)
-//   MODEL             = claude-haiku-4-5   (opsiyonel; boşsa aşağıdaki default)
+// ÜCRETSİZ yol: Cloudflare Workers AI ("AI" binding) — kredi kartı/anahtar
+// gerekmez, günlük ücretsiz kota vardır. Tarayıcıya hiçbir sır düşmez.
+//
+// AKTİFLEŞTİRME (tek seferlik):
+//   Cloudflare → Workers & Pages → (Pages projen) → Settings → Bindings
+//   → Add → Workers AI → Variable name: AI → Save → sonra Redeploy.
+// Opsiyonel model değişkeni:  MODEL = @cf/meta/llama-3.3-70b-instruct-fp8-fast
+//
+// (İleride ücretli daha güçlü model istersen: ANTHROPIC_API_KEY secret'ı
+//  eklersen otomatik olarak Claude'a geçer.)
 // =====================================================================
 
 const ALLOWED_ORIGINS = [
@@ -15,7 +20,7 @@ const ALLOWED_ORIGINS = [
   'https://talhabacak3-code.github.io'
 ];
 
-const SYSTEM_PROMPT = `Sen "İmge Dijital" firmasının web sitesindeki 7/24 Türkçe destek asistanısın. Kısa, sıcak, profesyonel ve net cevap ver (genelde 1–3 cümle). Yalnızca İmge Dijital ve hizmetleriyle ilgili konularda yardımcı ol; alakasız konularda kibarca konuyu firmaya getir.
+const SYSTEM_PROMPT = `Sen "İmge Dijital" firmasının web sitesindeki 7/24 destek asistanısın. HER ZAMAN TÜRKÇE ve kısa yanıt ver (genelde 1–3 cümle), sıcak ve profesyonel ol. Yalnızca İmge Dijital ve hizmetleriyle ilgili yardımcı ol; alakasız konularda kibarca konuyu firmaya getir.
 
 FİRMA BİLGİLERİ:
 - İmge Dijital: Afyonkarahisar merkezli, tüm Türkiye'ye online hizmet veren dijital pazarlama & web tasarım ajansı.
@@ -27,9 +32,9 @@ FİRMA BİLGİLERİ:
 
 KURALLAR:
 - FİYAT: Sabit fiyat listesi YOK. Her işletmeye özel teklif hazırlanır; ilk görüşme ve keşif ücretsizdir. Net fiyat için WhatsApp'a (0553 676 91 56) yönlendir. Asla uydurma rakam/fiyat verme.
-- Müşteri adı, istatistik, referans, ödül gibi DOĞRULANMAMIŞ bilgiler UYDURMA. Bilmediğin bir şey sorulursa dürüstçe söyle ve WhatsApp'tan uzmana bağlanmayı öner.
+- Müşteri adı, istatistik, referans, ödül gibi DOĞRULANMAMIŞ bilgileri UYDURMA. Bilmediğini dürüstçe söyle ve WhatsApp'tan uzmana bağlanmayı öner.
 - Satın alma, sözleşme, kişisel/veri işlemleri yapma; bunları WhatsApp'a yönlendir.
-- Yanıtları düz metin ver (markdown başlığı kullanma).`;
+- Yanıtları düz metin ver.`;
 
 function corsHeaders(origin) {
   const allow = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
@@ -51,59 +56,63 @@ export async function onRequestPost(context) {
   const headers = { 'Content-Type': 'application/json', ...corsHeaders(origin) };
 
   try {
-    if (!env.ANTHROPIC_API_KEY) {
-      return new Response(JSON.stringify({ error: 'not_configured' }), { status: 500, headers });
-    }
-
     const body = await request.json().catch(() => ({}));
 
     // Frontend {messages:[{role,content}]} ya da tek {message} gönderebilir.
-    let messages = Array.isArray(body.messages) ? body.messages : null;
-    if (!messages && typeof body.message === 'string') {
-      messages = [{ role: 'user', content: body.message }];
-    }
-    if (!messages || !messages.length) {
+    let turns = Array.isArray(body.messages) ? body.messages : null;
+    if (!turns && typeof body.message === 'string') turns = [{ role: 'user', content: body.message }];
+    if (!turns || !turns.length) {
       return new Response(JSON.stringify({ error: 'empty' }), { status: 400, headers });
     }
 
     // Güvenlik/limit: son 12 mesaj, rol doğrulama, uzunluk sınırı.
-    messages = messages
+    turns = turns
       .filter(m => m && (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string')
       .slice(-12)
       .map(m => ({ role: m.role, content: m.content.slice(0, 1500) }));
-    if (!messages.length || messages[0].role !== 'user') {
-      // Anthropic ilk mesajın 'user' olmasını ister.
-      messages = [{ role: 'user', content: (body.message || 'Merhaba').slice(0, 1500) }];
+    if (!turns.length || turns[0].role !== 'user') {
+      turns = [{ role: 'user', content: (body.message || 'Merhaba').slice(0, 1500) }];
     }
 
-    const model = env.MODEL || 'claude-haiku-4-5';
+    let reply = '';
 
-    const apiRes = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'x-api-key': env.ANTHROPIC_API_KEY,
-        'anthropic-version': '2023-06-01',
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify({
-        model: model,
-        max_tokens: 1024,
-        system: SYSTEM_PROMPT,
-        messages: messages
-      })
-    });
-
-    if (!apiRes.ok) {
-      const detail = await apiRes.text().catch(() => '');
-      return new Response(JSON.stringify({ error: 'upstream', status: apiRes.status, detail: detail.slice(0, 300) }), { status: 502, headers });
+    // 1) ÜCRETLİ (opsiyonel): ANTHROPIC_API_KEY varsa Claude kullan.
+    if (env.ANTHROPIC_API_KEY) {
+      const apiRes = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'x-api-key': env.ANTHROPIC_API_KEY,
+          'anthropic-version': '2023-06-01',
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify({
+          model: env.MODEL || 'claude-haiku-4-5',
+          max_tokens: 1024,
+          system: SYSTEM_PROMPT,
+          messages: turns
+        })
+      });
+      if (!apiRes.ok) {
+        const detail = await apiRes.text().catch(() => '');
+        return new Response(JSON.stringify({ error: 'upstream', status: apiRes.status, detail: detail.slice(0, 300) }), { status: 502, headers });
+      }
+      const data = await apiRes.json();
+      reply = (data.content || []).filter(b => b.type === 'text').map(b => b.text).join('\n').trim();
     }
-
-    const data = await apiRes.json();
-    const reply = (data.content || [])
-      .filter(b => b.type === 'text')
-      .map(b => b.text)
-      .join('\n')
-      .trim();
+    // 2) ÜCRETSİZ: Cloudflare Workers AI ("AI" binding).
+    else if (env.AI) {
+      const model = env.MODEL || '@cf/meta/llama-3.3-70b-instruct-fp8-fast';
+      const out = await env.AI.run(model, {
+        messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...turns],
+        max_tokens: 512,
+        temperature: 0.3
+      });
+      reply = (out && (out.response || out.result || '')).toString().trim();
+    }
+    // 3) Hiçbiri yoksa: frontend yerel bilgi tabanına düşsün.
+    else {
+      return new Response(JSON.stringify({ error: 'not_configured' }), { status: 500, headers });
+    }
 
     return new Response(JSON.stringify({ reply: reply || 'Şu an yanıt veremedim, WhatsApp’tan yazabilirsiniz: 0553 676 91 56' }), { status: 200, headers });
   } catch (e) {
