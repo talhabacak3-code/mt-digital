@@ -205,4 +205,18 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && root.classList.contains('open')) close();
   });
+
+  // Sayfa açılışında otomatik aç (her oturumda bir kez; her yenilemede değil).
+  var AUTO_OPEN = true;
+  var AUTO_OPEN_DELAY = 1500;
+  if (AUTO_OPEN) {
+    var already = false;
+    try { already = sessionStorage.getItem('imge_support_opened') === '1'; } catch (e) {}
+    if (!already) {
+      setTimeout(function () {
+        if (!root.classList.contains('open')) open();
+        try { sessionStorage.setItem('imge_support_opened', '1'); } catch (e) {}
+      }, AUTO_OPEN_DELAY);
+    }
+  }
 })();
