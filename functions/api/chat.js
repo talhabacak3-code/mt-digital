@@ -46,6 +46,17 @@ function corsHeaders(origin) {
   };
 }
 
+// Workers AI binding'ini ADINDAN bağımsız bul (env.AI, env.iMGE, vb.):
+// binding nesnesinin .run() metodu vardır; değişkenler string olur.
+function findAiBinding(env) {
+  if (env.AI && typeof env.AI.run === 'function') return env.AI;
+  for (const key in env) {
+    const val = env[key];
+    if (val && typeof val === 'object' && typeof val.run === 'function') return val;
+  }
+  return null;
+}
+
 export async function onRequestOptions(context) {
   return new Response(null, { status: 204, headers: corsHeaders(context.request.headers.get('Origin') || '') });
 }
@@ -99,19 +110,19 @@ export async function onRequestPost(context) {
       const data = await apiRes.json();
       reply = (data.content || []).filter(b => b.type === 'text').map(b => b.text).join('\n').trim();
     }
-    // 2) ÜCRETSİZ: Cloudflare Workers AI ("AI" binding).
-    else if (env.AI) {
+    // 2) ÜCRETSİZ: Cloudflare Workers AI binding (adı ne olursa olsun).
+    else {
+      const ai = findAiBinding(env);
+      if (!ai) {
+        return new Response(JSON.stringify({ error: 'not_configured' }), { status: 500, headers });
+      }
       const model = env.MODEL || '@cf/meta/llama-3.3-70b-instruct-fp8-fast';
-      const out = await env.AI.run(model, {
+      const out = await ai.run(model, {
         messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...turns],
         max_tokens: 512,
         temperature: 0.3
       });
       reply = (out && (out.response || out.result || '')).toString().trim();
-    }
-    // 3) Hiçbiri yoksa: frontend yerel bilgi tabanına düşsün.
-    else {
-      return new Response(JSON.stringify({ error: 'not_configured' }), { status: 500, headers });
     }
 
     return new Response(JSON.stringify({ reply: reply || 'Şu an yanıt veremedim, WhatsApp’tan yazabilirsiniz: 0553 676 91 56' }), { status: 200, headers });
