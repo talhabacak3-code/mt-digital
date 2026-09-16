@@ -126,12 +126,22 @@ a:focus-visible, button:focus-visible {
 }
 .vb-hero-inner {
   position: relative; z-index: 1;
-  padding: clamp(64px, 10vw, 128px) 32px clamp(56px, 8vw, 104px);
-  max-width: 900px;
+  padding: clamp(52px, 7vw, 96px) 32px clamp(52px, 7vw, 88px);
+  display: grid; grid-template-columns: 1.05fr .95fr; gap: 52px; align-items: center;
 }
 .vb-hero-title {
-  font-size: clamp(40px, 6vw, 64px); line-height: 1.02; letter-spacing: -.03em; color: var(--navy);
-  max-width: 18ch;
+  font-size: clamp(38px, 5vw, 58px); line-height: 1.03; letter-spacing: -.03em; color: var(--navy);
+  max-width: 15ch;
+}
+.vb-hero-visual { position: relative; }
+.vb-hero-visual::before {
+  content: ""; position: absolute; inset: -12% -8% -8% 6%; z-index: 0;
+  background: radial-gradient(60% 60% at 60% 40%, rgba(68,180,139,.18), transparent 70%);
+  filter: blur(6px);
+}
+.vb-hero-video {
+  position: relative; z-index: 1; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block;
+  border-radius: 16px; box-shadow: var(--sh-xl); background: #eef1f5;
 }
 .vb-lede {
   font-family: var(--body); font-size: clamp(16px, 1.6vw, 18px); line-height: 1.55; color: var(--steel);
@@ -456,6 +466,9 @@ a.contact-item:hover { box-shadow: var(--sh-md); transform: translateX(2px); }
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   :root { --gap: 56px; }
+  .vb-hero-inner { grid-template-columns: 1fr; gap: 36px; }
+  .vb-hero-visual { max-width: 460px; margin: 4px auto 0; width: 100%; }
+  .vb-hero-video { aspect-ratio: 16 / 10; }
   .grid-3, .features { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .packages { grid-template-columns: repeat(2, 1fr); }
