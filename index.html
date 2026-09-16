@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=17" />
+  <link rel="stylesheet" href="css/style.css?v=18" />
 </head>
 <body>
 
@@ -538,11 +538,16 @@
 
         <div class="map-wrap">
           <iframe
+            id="mapFrame"
             title="İmge Dijital konum — Afyonkarahisar Merkez"
-            src="https://www.google.com/maps?q=Afyonkarahisar+Merkez&output=embed"
+            data-src="https://www.google.com/maps?q=Afyonkarahisar+Merkez&output=embed"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             allowfullscreen></iframe>
+          <div class="map-blocked" id="mapBlocked" hidden>
+            <p>🗺️ Harita, çerez izni verildiğinde gösterilir.</p>
+            <button type="button" class="btn btn-secondary" id="mapAllow">Haritayı Göster</button>
+          </div>
         </div>
       </div>
     </div>
@@ -608,6 +613,17 @@
   <button class="to-top" id="toTop" aria-label="Sayfanın başına dön">
     <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 4l8 8-1.41 1.41L13 7.83V20h-2V7.83l-5.59 5.58L4 12z"/></svg>
   </button>
+
+  <!-- ===== ÇEREZ ONAY BANDI ===== -->
+  <div class="cookie" id="cookie" hidden>
+    <div class="cookie-inner">
+      <p>Deneyiminizi iyileştirmek ve harita gibi hizmetleri sunmak için çerezleri kullanıyoruz. Ayrıntılar için <a href="cerez.html">Çerez Politikası</a>.</p>
+      <div class="cookie-actions">
+        <button class="btn btn-secondary" id="cookieReject" type="button">Reddet</button>
+        <button class="btn btn-primary" id="cookieAccept" type="button">Kabul Et</button>
+      </div>
+    </div>
+  </div>
 
   <!-- ===== DESTEK MERKEZİ WIDGET ===== -->
   <div class="support" id="support">
@@ -688,6 +704,7 @@
   </script>
 
   <script src="js/main.js?v=16"></script>
+  <script src="js/consent.js?v=2"></script>
   <script src="js/support.js?v=3"></script>
 </body>
 </html>
