@@ -108,12 +108,35 @@
 
   function scrollDown() { body.scrollTop = body.scrollHeight; }
 
+  // Bot yanıtındaki telefon numarasını WhatsApp linkine, e-postayı mailto'ya çevir (güvenli, DOM ile)
+  function linkifyInto(container, text) {
+    var re = /(0?5\d{2}[\s.\-]?\d{3}[\s.\-]?\d{2}[\s.\-]?\d{2})|([A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,})/g;
+    var last = 0, m;
+    while ((m = re.exec(text)) !== null) {
+      if (m.index > last) container.appendChild(document.createTextNode(text.slice(last, m.index)));
+      var a = document.createElement('a');
+      a.className = 'msg-link';
+      a.target = '_blank'; a.rel = 'noopener';
+      if (m[1]) { // telefon → WhatsApp
+        var wa = m[1].replace(/\D/g, '').replace(/^0/, '90');
+        if (wa.indexOf('90') !== 0) wa = '90' + wa;
+        a.href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent('Merhaba, bilgi almak istiyorum');
+      } else { // e-posta → mailto
+        a.href = 'mailto:' + m[2];
+      }
+      a.textContent = m[0];
+      container.appendChild(a);
+      last = m.index + m[0].length;
+    }
+    if (last < text.length) container.appendChild(document.createTextNode(text.slice(last)));
+  }
+
   function bubble(text, who, waText) {
     var el = document.createElement('div');
     el.className = 'msg msg-' + who;
     var p = document.createElement('div');
     p.className = 'msg-b';
-    p.textContent = text;
+    if (who === 'bot') linkifyInto(p, text); else p.textContent = text;
     el.appendChild(p);
     if (waText) {
       var a = document.createElement('a');
