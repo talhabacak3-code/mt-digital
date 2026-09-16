@@ -46,13 +46,14 @@ function corsHeaders(origin) {
   };
 }
 
-// Workers AI binding'ini ADINDAN bağımsız bul (env.AI, env.iMGE, vb.):
-// binding nesnesinin .run() metodu vardır; değişkenler string olur.
+// Workers AI binding'ini olası adlardan seç. (Pages'in otomatik ASSETS
+// binding'i RPC proxy olduğu için typeof-tarama güvenilmez; bu yüzden
+// adları açıkça deniyoruz. Kullanıcı binding'i "iMGE" adıyla ekledi.)
 function findAiBinding(env) {
-  if (env.AI && typeof env.AI.run === 'function') return env.AI;
-  for (const key in env) {
-    const val = env[key];
-    if (val && typeof val === 'object' && typeof val.run === 'function') return val;
+  var names = ['AI', 'iMGE', 'IMGE', 'imge', 'Imge', 'WORKERS_AI', 'ai'];
+  for (var i = 0; i < names.length; i++) {
+    var b = env[names[i]];
+    if (b && typeof b.run === 'function') return b;
   }
   return null;
 }
