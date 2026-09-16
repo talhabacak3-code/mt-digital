@@ -9,9 +9,12 @@
 (function () {
   'use strict';
 
-  // Gerçek AI'ya yükseltmek için Worker adresi (örn. "https://destek.imgedijital.com/api/chat").
-  var AI_ENDPOINT = '';
+  // Gerçek Claude AI ucu (Cloudflare Pages Function). Anahtar sunucuda gizli.
+  // imgedijital.com'da çalışır; erişilemezse otomatik olarak yerel bilgi
+  // tabanına düşer (github.io veya anahtar ayarlı değilken).
+  var AI_ENDPOINT = 'https://imgedijital.com/api/chat';
   var WA = 'https://wa.me/905536769156?text=';
+  var convo = []; // {role:'user'|'assistant', content} — AI'ya bağlam için
 
   // ---- Türkçe normalizasyon (aksan + İ/ı duyarsız eşleşme) ----
   function norm(s) {
@@ -137,7 +140,7 @@
     var r = await fetch(AI_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: text })
+      body: JSON.stringify({ messages: convo, message: text })
     });
     if (!r.ok) throw new Error('bad status');
     var data = await r.json();
@@ -161,12 +164,15 @@
     }
     t.remove();
     bubble(res.a, 'bot', res.fallback ? 'Merhaba, canlı destek istiyorum' : res.wa);
+    convo.push({ role: 'assistant', content: res.a });
+    if (convo.length > 12) convo = convo.slice(-12);
   }
 
   function send(text) {
     text = (text || '').trim();
     if (!text) return;
     bubble(text, 'user');
+    convo.push({ role: 'user', content: text });
     input.value = '';
     respond(text);
   }
