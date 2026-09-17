@@ -270,17 +270,18 @@ a:focus-visible, button:focus-visible {
 .feature:hover .feat-media img { transform: scale(1.05); }
 .feat-body { padding: 20px 22px 24px; flex: 1; }
 
-/* ===== CTA BANNER — SAYFANIN TEK TURUNCU YÜZEYİ ===== */
+/* ===== CTA BANNER — marka degradesi (lacivert → koyu seafoam) ===== */
 .cta-banner {
-  margin-top: 44px; background: var(--orange); color: #fff; border-radius: var(--radius); padding: 44px 40px;
+  margin-top: 44px; color: #fff; border-radius: var(--radius); padding: 44px 40px;
+  background: linear-gradient(120deg, var(--navy) 0%, #15325c 52%, var(--sea-700) 100%);
   display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap;
   box-shadow: var(--sh-md); position: relative; overflow: hidden;
 }
-.cta-banner::before { content: ""; position: absolute; top: -50%; right: -6%; width: 380px; height: 380px; background: radial-gradient(circle, rgba(255,255,255,.16), transparent 62%); pointer-events: none; }
-.cta-text h3 { font-size: clamp(22px, 3vw, 30px); line-height: 1.12; color: #fff; }
-.cta-text p { font-family: var(--body); color: rgba(255,255,255,.9); font-size: 15px; margin-top: 10px; }
-.cta-banner .btn-white { background: #fff; color: var(--orange); }
-.cta-banner .btn-white:hover { color: #d8551d; }
+.cta-banner::before { content: ""; position: absolute; top: -55%; right: -8%; width: 420px; height: 420px; background: radial-gradient(circle, rgba(68,180,139,.35), transparent 62%); pointer-events: none; }
+.cta-text h3 { font-size: clamp(22px, 3vw, 30px); line-height: 1.12; color: #fff; position: relative; }
+.cta-text p { font-family: var(--body); color: rgba(255,255,255,.82); font-size: 15px; margin-top: 10px; position: relative; }
+.cta-banner .btn-white { background: #fff; color: var(--navy); position: relative; }
+.cta-banner .btn-white:hover { color: var(--sea-700); }
 
 /* ===== PAKETLER ===== */
 .packages { grid-template-columns: repeat(5, 1fr); align-items: stretch; gap: 16px; }
