@@ -230,7 +230,8 @@
   });
 
   // Sayfa açılışında otomatik aç (her oturumda bir kez; her yenilemede değil).
-  var AUTO_OPEN = true;
+  // Mobilde ekranı kapladığı için otomatik açılmaz; sadece masaüstünde.
+  var AUTO_OPEN = window.matchMedia('(min-width: 641px)').matches;
   var AUTO_OPEN_DELAY = 1500;
   if (AUTO_OPEN) {
     var already = false;

@@ -494,6 +494,13 @@ a.contact-item:hover { box-shadow: var(--sh-md); transform: translateX(2px); }
   .footer-bottom { flex-direction: column; text-align: center; }
   .cta-banner { flex-direction: column; align-items: flex-start; }
   .vb-hero-actions .btn { flex: 1; }
+  /* Mobilde bölümler birbirine çok yakındı; nefes payı ekle */
+  .vb-hero-inner { padding-bottom: 48px; }
+  .vb-hero-meta { margin-top: 26px; margin-bottom: 8px; }
+  .platforms { padding: 32px 0; margin-top: 8px; }
+  .platforms-title { margin-bottom: 22px; }
+  .stats { padding-top: 36px; }
+  .stats-row { row-gap: 40px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1 !important; transform: none !important; }
