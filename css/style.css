@@ -262,6 +262,14 @@ a:focus-visible, button:focus-visible {
 .feature h3 { font-size: 17px; margin-bottom: 8px; }
 .feature p { font-family: var(--body); color: var(--steel); font-size: 14.5px; line-height: 1.5; }
 
+/* Fotoğraflı varyant (Neden Biz) */
+.features-photo .feature { padding: 0; display: flex; flex-direction: column; }
+.features-photo .feature::before { top: auto; bottom: 14px; right: 16px; font-size: 40px; }
+.feat-media { position: relative; aspect-ratio: 3 / 2; overflow: hidden; background: var(--canvas); }
+.feat-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .45s ease; }
+.feature:hover .feat-media img { transform: scale(1.05); }
+.feat-body { padding: 20px 22px 24px; flex: 1; }
+
 /* ===== CTA BANNER — SAYFANIN TEK TURUNCU YÜZEYİ ===== */
 .cta-banner {
   margin-top: 44px; background: var(--orange); color: #fff; border-radius: var(--radius); padding: 44px 40px;
