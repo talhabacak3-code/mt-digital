@@ -6,6 +6,12 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["--yes", "http-server", "-p", "5599", "-c-1"],
       "port": 5599
+    },
+    {
+      "name": "yeni-tasarim",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "http-server", "C:/Users/VICTUS/AppData/Local/Temp/claude/C--Claude-Yaz-l-m-web-sitesi/4ac5e2a7-fd67-4e46-81de-13798d766fa7/scratchpad/imge-zip/imge-dijital", "-p", "5601", "-c-1"],
+      "port": 5601
     }
   ]
 }
