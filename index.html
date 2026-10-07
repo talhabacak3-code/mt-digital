@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=32" />
+  <link rel="stylesheet" href="css/style.css?v=33" />
 </head>
 <body>
 
@@ -94,7 +94,11 @@
           <span>✳</span>
         </div>
         <div class="hx-frame">
-          <img src="assets/img/hero.jpg" width="900" height="1125" alt="Lacivert ve seafoam yeşili akışkan şeritlerden oluşan soyut marka görseli" fetchpriority="high" />
+          <video class="hx-video" id="heroVideo" autoplay muted loop playsinline preload="metadata"
+                 poster="assets/img/hero.jpg" width="900" height="1125"
+                 aria-label="Lacivert ve seafoam yeşili akışkan şeritlerden oluşan soyut marka animasyonu">
+            <source src="assets/video/hero.mp4" type="video/mp4" />
+          </video>
           <span class="hx-tag">Fikirden dijitale.</span>
         </div>
         <div class="hx-float">
@@ -741,6 +745,18 @@
         c.setAttribute('aria-hidden', 'true');
         t.appendChild(c);
       });
+    })();
+    // Hero videosu: hareket azaltma tercihinde durdur (poster görseli kalır)
+    (function () {
+      var v = document.getElementById('heroVideo');
+      if (!v) return;
+      var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+      var apply = function () {
+        if (mq.matches) { v.pause(); v.removeAttribute('autoplay'); }
+        else { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      };
+      apply();
+      if (mq.addEventListener) mq.addEventListener('change', apply);
     })();
   </script>
 </body>

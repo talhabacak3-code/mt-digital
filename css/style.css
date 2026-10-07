@@ -200,7 +200,8 @@ a:focus-visible, button:focus-visible {
   position: relative; height: 510px; border-radius: 110px 16px 16px 16px;
   background: #e8ece4; overflow: hidden; box-shadow: var(--sh-md);
 }
-.hx-frame > img { width: 100%; height: 100%; object-fit: cover; object-position: 55% center; }
+.hx-frame > img,
+.hx-frame > video { width: 100%; height: 100%; object-fit: cover; object-position: 55% center; display: block; }
 .hx-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 66%, rgba(17,26,74,.35)); }
 .hx-tag { position: absolute; bottom: 26px; left: 28px; color: #fff; font-size: 12.5px; z-index: 1; }
 .hx-stamp {
