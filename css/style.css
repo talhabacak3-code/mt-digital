@@ -195,7 +195,9 @@ a:focus-visible, button:focus-visible {
 }
 
 /* — sağ sütun (görsel) — */
-.hero-x-art { position: relative; min-width: 0; padding-bottom: 30px; }
+.hero-x-art { position: relative; min-width: 0; }
+/* Yüzen kart yalnızca görsel çerçevesine göre konumlansın (künyeye binmesin) */
+.hx-art-main { position: relative; }
 .hx-frame {
   position: relative; height: 510px; border-radius: 110px 16px 16px 16px;
   background: #e8ece4; overflow: hidden; box-shadow: var(--sh-md);
@@ -214,7 +216,7 @@ a:focus-visible, button:focus-visible {
 .hx-stamp > span { font-size: 34px; color: var(--sea-700); line-height: 1; }
 @keyframes hxStampTurn { to { transform: rotate(360deg); } }
 .hx-float {
-  position: absolute; left: -36px; right: 32px; bottom: 68px; z-index: 2;
+  position: absolute; left: -36px; right: 32px; bottom: 28px; z-index: 2;
   background: #fff; border-radius: 18px; box-shadow: var(--sh-md);
   padding: 20px; display: flex; gap: 14px; align-items: center;
 }
@@ -631,7 +633,7 @@ a.contact-item:hover { box-shadow: var(--sh-md); transform: translateX(2px); }
   .hero-x-lede { font-size: 14.5px; }
   .hero-x-actions { margin-top: 24px; gap: 18px; }
   .hx-frame { height: 380px; border-top-left-radius: 70px; }
-  .hx-float { left: -10px; right: 8px; bottom: 46px; padding: 14px; gap: 10px; }
+  .hx-float { left: -10px; right: 8px; bottom: 18px; padding: 14px; gap: 10px; }
   .hx-float strong { font-size: 12px; }
   .hx-float p { font-size: 10.5px; }
   .hx-float-ico { width: 34px; height: 34px; }
